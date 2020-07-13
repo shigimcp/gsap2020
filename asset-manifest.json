@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/gsap2020/static/css/main.39ccb264.chunk.css",
+    "main.js": "/gsap2020/static/js/main.da69de84.chunk.js",
+    "main.js.map": "/gsap2020/static/js/main.da69de84.chunk.js.map",
+    "runtime-main.js": "/gsap2020/static/js/runtime-main.3d68c562.js",
+    "runtime-main.js.map": "/gsap2020/static/js/runtime-main.3d68c562.js.map",
+    "static/js/2.c98e6ed9.chunk.js": "/gsap2020/static/js/2.c98e6ed9.chunk.js",
+    "static/js/2.c98e6ed9.chunk.js.map": "/gsap2020/static/js/2.c98e6ed9.chunk.js.map",
+    "index.html": "/gsap2020/index.html",
+    "precache-manifest.d9c929bb2c5fd21b90db726a80193208.js": "/gsap2020/precache-manifest.d9c929bb2c5fd21b90db726a80193208.js",
+    "service-worker.js": "/gsap2020/service-worker.js",
+    "static/css/main.39ccb264.chunk.css.map": "/gsap2020/static/css/main.39ccb264.chunk.css.map",
+    "static/js/2.c98e6ed9.chunk.js.LICENSE.txt": "/gsap2020/static/js/2.c98e6ed9.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3d68c562.js",
+    "static/js/2.c98e6ed9.chunk.js",
+    "static/css/main.39ccb264.chunk.css",
+    "static/js/main.da69de84.chunk.js"
+  ]
+}
