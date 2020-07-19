@@ -1,26 +1,28 @@
 import React from 'react';
 
-import './App.scss';
+import './stylesheets/App.scss';
 
-// import logo from './logo.svg';
 
-import Banner300x250 from './Banner300x250';
-import Banner300x600 from './Banner300x600';
+// import Banner300x250 from './components/Banner300x250';
+// import Banner300x600 from './components/Banner300x600';
 
+import BSPS_26897 from './banners/26897_BS_PRIVATE_SHOW_GWP_PR_Walgreens_300x250/BSPS_26897';
+import NM_MINAJESTY_11155 from './banners/CR_11155_MINAJESTY_2014_US_DIGITAL_300x600/NM_MINAJESTY_11155';
+import NMTG_26903 from './banners/26903_NM_TRINI_GIRL_GWP_PR_Walgreens_300x250/NMTG_26903'
 
 function App() {
     return (
         <div className="App">
 
+        {/* 
             <Banner300x250 />
             <Banner300x600 />
-{/* 
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>Edit <code>src/App.js</code> and save to reload.</p>
-                <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">Learn React</a>
-            </header>
- */}
+        */}
+
+            <BSPS_26897 />
+            <NM_MINAJESTY_11155 />
+            <NMTG_26903 />
+
         </div>
     );
 }
