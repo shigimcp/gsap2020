@@ -3,6 +3,8 @@
 
     // background: #000000;
     // background-image: url(./images/Xframes/26903_NM_TRINI_GIRL_GWP_PR_Walgreens_300x250_retina_01.jpg);
+    // background-image: url(./images/Xframes/26903_NM_TRINI_GIRL_GWP_PR_Walgreens_300x250_retina_02.jpg);
+    // background-image: url(./images/Xframes/26903_NM_TRINI_GIRL_GWP_PR_Walgreens_300x250_retina_03b.jpg);
     background-size: contain;
 
     // .bannerImg  {
@@ -12,7 +14,7 @@
     //     // width: inherit;
     //     // height: inherit;
 
-    //     opacity: 0.25;
+    //     opacity: 0.5;
 
     //     // margin: 0;
     //     // padding: 0;
@@ -37,12 +39,12 @@
 
         // position: relative;
 
-        g, .logo_NMTG_sp_ds, image {
-            border: 2px solid #0000ff;
+        // g, .logo_NMTG_sp_ds, image {
+        //     border: 2px solid #0000ff;
 
-            // color: #ffffff;
-            // fill: #ffffff;
-        }
+        //     // color: #ffffff;
+        //     // fill: #ffffff;
+        // }
     }
 
     .logo_bg {
@@ -65,6 +67,13 @@
         position: absolute;
         top: 0;
         left: 0;
+    }
+
+    .nmmn_bottle {
+        // border: 2px solid #ff00ff;
+
+        width: auto;
+        height: auto;
     }
 
     .vendorTag {
@@ -93,6 +102,7 @@
 
         img {
             width: 75%;
+            margin: 3.75% 12.75%;
         }
     }
 

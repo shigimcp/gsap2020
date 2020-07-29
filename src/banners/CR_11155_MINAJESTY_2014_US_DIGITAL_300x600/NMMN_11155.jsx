@@ -1,19 +1,24 @@
+//#region ==================== IMPORTS ====================
+
 import React from 'react';
-import { useRef, useEffect } from 'react';
+// import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
+// import { useEffect } from 'react';
+import { useLayoutEffect } from 'react';
 
 import { gsap } from 'gsap';
 import { RoughEase } from 'gsap/EasePack';
 
-import '../../stylesheets/banners.scss';
-import './NM_MINAJESTY_11155.scss';
+import '../banners.scss';
+import './NMMN_11155.scss';
 
 
-//#region ==================== ASSETS IMPORT ====================
+//#region -------------------- IMPORTS: ASSETS --------------------
 
 import bg from './images/bg.jpg';
 import model from './images/IMAGE.jpg';
 import bottle from './images/bottle.png';
-import cta from './images/btn_walgreens.svg';
+import cta from './images/btn_walmart.svg';
 // import vendorLogo from './images/logo_walgreens.svg'
 
 // import LOGO_NM_Minajesty_hed from './images/ee4f80/LOGO_NM_Minajesty_hed.svg';
@@ -26,34 +31,36 @@ import LOGO_NM_Minajesty_nicki from './images/ffffff/LOGO_NM_Minajesty_nicki.svg
 import LOGO_NM_Minajesty_minaj from './images/ffffff/LOGO_NM_Minajesty_minaj.svg';
 import LOGO_NM_Minajesty_sultry from './images/ffffff/LOGO_NM_Minajesty_sultry.svg';
 
-//#endregion ==================== ASSETS IMPORT ====================
+//#endregion -------------------- IMPORTS: ASSETS --------------------
 
 
-//#region ==================== REGISTER GSAP PLUGINS ====================
+//#region -------------------- GSAP: REGISTER PLUGINS --------------------
 
 gsap.registerPlugin(RoughEase);
 
-//#endregion ==================== REGISTER GSAP PLUGINS ====================
+//#endregion -------------------- GSAP: REGISTER PLUGINS --------------------
+
+//#endregion ==================== IMPORTS ====================
 
 
-export default function NM_MINAJESTY_11155() {
+export default function NMMN_11155() {
 
     //#region ==================== ANIMATION DURATIONs ====================
 
-    // var staggerDuration = 0.75;
-    // var staggerDelay = 0.0625;
+    // const staggerDuration = 0.75;
+    // const staggerDelay = 0.0625;
 
-    // var animDuration00 = 0.125;
-    // var animDuration01 = 0.5;
-    var animDuration02 = 1;
-    // var animDuration03 = 1.5;
-    var animDuration04 = 2;
-    var animDuration05 = 2.5;
-    // var animDuration06 = 3;
-    // var animDuration07 = 3.5;
-    var animDuration08 = 4;
-    // var animDuration09 = 4.5;
-    // var animDuration10 = 5;
+    // const animDuration00 = 0.125;
+    // const animDuration01 = 0.5;
+    const animDuration02 = 1;
+    // const animDuration03 = 1.5;
+    const animDuration04 = 2;
+    const animDuration05 = 2.5;
+    // const animDuration06 = 3;
+    // const animDuration07 = 3.5;
+    const animDuration08 = 4;
+    // const animDuration09 = 4.5;
+    const animDuration10 = 5;
 
     //#endregion ==================== ANIMATION DURATIONs ====================
 
@@ -66,7 +73,7 @@ export default function NM_MINAJESTY_11155() {
     const ctaRef = useRef(null);
     // const vendorLogoRef = useRef(null);
 
-    const LOGO_NM_MinajestyREF = useRef(null);
+    const LOGO_NM_MinajestyRef = useRef(null);
 
     const logo_NM_Minajesty_baseREF = useRef(null);
 
@@ -87,13 +94,30 @@ export default function NM_MINAJESTY_11155() {
     //#endregion ==================== ASSETS Ref ====================
 
 
-    useEffect(() => {
+    // useEffect(() => {
+    useLayoutEffect(() => {
 
         const tl = gsap.timeline({ delay: 0 });
 
         tl
 
             //#region ==================== INITIALIZE OBJECTS ====================
+
+            //#region -------------------- autoAlpha --------------------
+
+            // .set([bgRef.current], { autoAlpha: 0 }, 'frame00')
+            // .set([modelRef.current], { autoAlpha: 0 }, 'frame00')
+
+            // // .set([LOGO_NM_MinajestyRef.current], { autoAlpha: 0 }, 'frame00')
+            // // .set([logo_NM_Minajesty_baseREF.current], { autoAlpha: 0 }, 'frame00')
+            // // .set([logo_NM_Minajesty_dsREF.current], { autoAlpha: 0 }, 'frame00')
+
+            // .set([bottleRef.current], { autoAlpha: 0.5 }, 'frame00')
+
+            //#endregion -------------------- autoAlpha --------------------
+
+
+            //#region -------------------- SET TRANSFORMS --------------------
 
             // -------------------- SET TRANSFORM ORIGiNS --------------------
 
@@ -102,37 +126,42 @@ export default function NM_MINAJESTY_11155() {
 
             // -------------------- FRAME01 --------------------
 
-            // .set([bgRef.current], { autoAlpha: 0 }, 'frame00')
-            // .set([modelRef.current], { autoAlpha: 0 }, 'frame00')
-            .set([LOGO_NM_MinajestyREF.current], { y: -40 }, 'frame00')
-            // .set([LOGO_NM_MinajestyREF.current, bottleTagRef.current], { autoAlpha: 0.5 }, 'frame00')
+            .set([LOGO_NM_MinajestyRef.current], { y: -40 }, 'frame00')
             .set([bottleRef.current], { x: -90, y: 465 }, 'frame00')
-            .set([LOGO_NM_Minajesty_sultryRef.current], { x: 25, y: 400, scale: 1.3 }, 'frame00')
+            .set([LOGO_NM_Minajesty_sultryRef.current], { x: 25, y: 400, scale: 1.3 }, 'frame01')
             .set([ctaRef.current], { y: 395 }, 'frame00')
+
+            // .set([LOGO_NM_MinajestyRef.current], { x: 26, y: -44 }, 'frame00')
+            // .set([bottleRef.current], { x: 13, y: 464 }, 'frame00')
+            // .set([LOGO_NM_Minajesty_sultryRef.current], { x: 25, y: 403, scale: 1.3 }, 'frame01')
+            // .set([ctaRef.current], { y: 390 }, 'frame00')
+
+            //#endregion -------------------- SET TRANSFORMS --------------------
 
             //#endregion ==================== INITIALIZE OBJECTS ====================
 
 
+
             //#region ==================== FRAME 01 ====================
 
-            .fromTo([modelRef.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.out', duration: animDuration08 }, 'frame01 +=0')
-            // .to([logo_NM_Minajesty_baseREF.current, logo_NM_Minajesty_dsREF.current], { autoAlpha: 1, ease: "rough({template: sine.out, strength: 1, points: 20, taper: 'none', randomize: false, clamp: false})", duration: 5 }, 'frame01 +=0')
-            .fromTo([logo_NM_Minajesty_baseREF.current, logo_NM_Minajesty_dsREF.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: "rough({template: none.out, strength: 5, points: 30, taper: 'out', randomize: false, clamp: false})", duration: animDuration05 }, 'frame01 +=0')
+            .fromTo([LOGO_NM_MinajestyRef.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: "rough({template: none.out, strength: 5, points: 50, taper: 'out', randomize: true, clamp: false})", duration: animDuration10 }, 'frame01 +=0')
 
-            .fromTo([bottleRef.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.out', duration: animDuration04 }, 'frame01 +=1.5')
-            .fromTo([LOGO_NM_Minajesty_sultryRef.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.out', duration: animDuration04 }, 'frame01 +=1.5625')
+            .fromTo([modelRef.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.out', duration: animDuration08 }, 'frame01 +=2')
 
-            .fromTo([ctaRef.current], { y:375, autoAlpha: 0 }, { y: 395, autoAlpha: 1, ease: 'power3.out', duration: animDuration02 }, 'frame01 +=3')
+            .fromTo([bottleRef.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.out', duration: animDuration04 }, 'frame01 +=2.5')
+            .fromTo([LOGO_NM_Minajesty_sultryRef.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.out', duration: animDuration04 }, 'frame01 +=2.5625')
+
+            .fromTo([ctaRef.current], { y:370, autoAlpha: 0 }, { y: 395, autoAlpha: 1, ease: 'power3.out', duration: animDuration02 }, 'frame01 +=3.5')
 
             //#endregion ==================== FRAME 01 ====================
         ;
 
-    }, [animDuration02, animDuration04, animDuration05, animDuration08]);
+    }, [animDuration02, animDuration04, animDuration05, animDuration08, animDuration10]);
 
 
     return (
-        <div className='banner300x600 nm_minajesty_11155'>
-            {/* <h1>NM_MINAJESTY_11155 banner300x600 Component</h1> */}
+        <div className='banner300x600 nmmn_11155'>
+            {/* <h1>NMMN_11155 banner300x600 Component</h1> */}
 
             <div className='bannerImg bg_300x600' ref={bgRef}><img src={bg} alt='bg' /></div>
             <div className='bannerImg image_300x600' ref={modelRef}><img src={model} alt='model' /></div>
@@ -142,7 +171,7 @@ export default function NM_MINAJESTY_11155() {
 
         {/* #region -------------------- SVG FILTERS (logo_NM_Minajesty) -------------------- */}
             
-            <svg className='logo_NM_Minajesty' version='1.1' baseProfile='full' id='logo_NM_MinajestyID' width='250' height='75' space='preserve' overflow='visible' ref={LOGO_NM_MinajestyREF}>
+            <svg className='logo_NM_Minajesty' version='1.1' baseProfile='full' id='logo_NM_MinajestyID' width='250' height='75' space='preserve' overflow='visible' ref={LOGO_NM_MinajestyRef}>
 
                 <defs>
 

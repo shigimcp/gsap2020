@@ -1,13 +1,18 @@
+//#region ==================== IMPORTS ====================
+
 import React from 'react';
-import { useRef, useEffect } from 'react';
+// import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
+// import { useEffect } from 'react';
+import { useLayoutEffect } from 'react';
 
 import { gsap } from 'gsap';
 
-import '../../stylesheets/banners.scss';
+import '../banners.scss';
 import './NMTG_26903.scss';
 
 
-//#region ==================== ASSETS ====================
+//#region -------------------- IMPORTS: ASSETS --------------------
 
 import LOGO_NMTG_sp from './images/LOGO_NMTG_sp.svg';
 
@@ -25,32 +30,36 @@ import legal from './images/legal.png'
 import cta from './images/cta_sp.svg';
 import vendorLogo from './images/logo_walgreens.svg'
 
-//#endregion ==================== ASSETS ====================
+//#endregion -------------------- IMPORTS: ASSETS --------------------
+
+//#endregion ==================== IMPORTS ====================
 
 
 export default function NMTG_26903() {
 
     //#region ==================== ANIMATION DURATIONs ====================
 
-    // var staggerDuration = 0.75;
-    // var staggerDelay = 0.0625;
+    // const staggerDuration = 0.75;
+    // const staggerDelay = 0.0625;
 
-    // var animDuration00 = 0.125;
-    // var animDuration01 = 0.5;
-    var animDuration02 = 1;
-    var animDuration03 = 1.5;
-    var animDuration04 = 2;
-    // var animDuration05 = 2.5;
-    // var animDuration06 = 3;
-    // var animDuration07 = 3.5;
-    // var animDuration08 = 4;
-    // var animDuration09 = 4.5;
-    // var animDuration10 = 5;
+    // const animDuration00 = 0.125;
+    const animDuration01 = 0.5;
+    const animDuration02 = 1;
+    const animDuration03 = 1.5;
+    const animDuration04 = 2;
+    // const animDuration05 = 2.5;
+    // const animDuration06 = 3;
+    // const animDuration07 = 3.5;
+    // const animDuration08 = 4;
+    // const animDuration09 = 4.5;
+    // const animDuration10 = 5;
 
     //#endregion ==================== ANIMATION DURATIONs ====================
 
 
     //#region ==================== ASSETS Ref ====================
+
+    const nmtg_26903Ref = useRef(null);
 
     const logo_NMTG_spRef = useRef(null);
     const logo_NMTG_sp_baseRef = useRef(null);
@@ -82,9 +91,10 @@ export default function NMTG_26903() {
     //#endregion ==================== ASSETS Ref ====================
 
 
-    //#region ==================== useEffect ====================
+    //#region ==================== useEffect / useLayoutEffect ====================
 
-    useEffect(() => {
+    // useEffect(() => {
+    useLayoutEffect(() => {
 
         const tl = gsap.timeline({ delay: 0 });
 
@@ -92,9 +102,11 @@ export default function NMTG_26903() {
 
             //#region ==================== INITIALIZE OBJECTS ====================
 
-            //#region -------------------- autoAlpha: 0 --------------------
+            //#region -------------------- autoAlpha --------------------
 
             // .set([logo_NMTG_spRef.current], { autoAlpha: 0 }, 'frame00')
+            // .set([logo_NMTG_sp_dsRef01.current, logo_NMTG_sp_dsRef02.current], { autoAlpha: 0 }, 'frame00')
+            // .set([logo_bgRef.current], { autoAlpha: 0 }, 'frame00')
 
             // .set([bg01Ref.current], { autoAlpha: 0 }, 'frame00')
             // .set([bg02Ref.current], { autoAlpha: 0 }, 'frame00')
@@ -113,33 +125,42 @@ export default function NMTG_26903() {
             // .set([ctaRef.current], { autoAlpha: 0 }, 'frame00')
             // .set([vendorLogoRef.current], { autoAlpha: 0 }, 'frame00')
 
-            //#endregion -------------------- autoAlpha: 0 --------------------
+            //#endregion -------------------- autoAlpha --------------------
 
 
             //#region -------------------- SET TRANSFORMS --------------------
 
-            // -------------------- SET TRANSFORM ORIGiNS --------------------
+            //#region -------------------- SET TRANSFORM ORIGiNS --------------------
 
             .set([logo_NMTG_spRef.current], { transformOrigin: '50% 50%', immediateRender: true }, 'frame00')
+            .set([bottleRef.current], { transformOrigin: '50% 0', immediateRender: true }, 'frame00')
             // .set([logo_NMTG_spRef.current, bg02_mask01Ref.current, bg02_mask02Ref.current], { transformOrigin: '50% 50%', immediateRender: true }, 'frame00')
+
+            //#endregion -------------------- SET TRANSFORM ORIGiNS --------------------
 
             // -------------------- FRAME01 --------------------
 
-            .set([logo_NMTG_spRef.current], { y: 95 }, 'frame00')
             .set([logo_bgRef.current], { y: 15 }, 'frame00')
 
-            // // -------------------- FRAME02 --------------------
+            // .set([logo_NMTG_spRef.current], { y: 95 }, 'frame00')
+            // // .set([logo_NMTG_spRef.current], { x: 38, y: 95 }, 'frame00')
 
-            // .set([logo_NMTG_spRef.current], { y: 15, scale: 0.777777777777778 }, 'frame00')
-            // .set([bottleRef.current], { y: 15 }, 'frame01')
+            // -------------------- FRAME02 --------------------
 
-            // // -------------------- FRAME03 --------------------
+            // .set([logo_NMTG_spRef.current], { y: 15, scale: 0.7875 }, 'frame00')
 
-            // .set([gwpRef.current], { x: -60, y: -10 }, 'frame01')
-            // // .set([modelRef.current], { x: 0, y: 0, scale: 1}, 'frame00')
+            // .set([bottleRef.current], { x: 105, y: 13 }, 'frame01')
+            // // .set([bottleRef.current], { x: 105, y: 12 }, 'frame01')
 
-            // .set([copy01Ref.current], { x: 62, y: -24, scale: 0.5 }, 'frame01')
-            // .set([legalRef.current], { x: 77, y: 6, scale: 0.5 }, 'frame01')
+            // -------------------- FRAME03 --------------------
+
+            // .set([gwpRef.current], { x: -60, y: -12 }, 'frame00')
+            // .set([copy01Ref.current], { x: 62.25, y: -25, scale: 0.5 }, 'frame00')
+            // .set([legalRef.current], { x: 78, y: 6, scale: 0.5 }, 'frame01')
+
+            // .set([gwpRef.current], { x: 5, y: -13 }, 'frame00')
+            // .set([copy01Ref.current], { x: 62.5, y: -25.5, scale: 0.5 }, 'frame00')
+            // .set([legalRef.current], { x: 95, y: 5, scale: 0.5 }, 'frame01')
 
             //#endregion -------------------- SET TRANSFORMS --------------------
 
@@ -150,13 +171,12 @@ export default function NMTG_26903() {
 
             .fromTo([bg02Ref01.current], { y: 250 }, { y: -250, ease: 'power3.in', duration: animDuration04 }, 'frame01 +=0')
             .fromTo([bg02_mask01Ref.current], { y: -250 }, { y: 250, ease: 'power3.in', duration: animDuration04 }, 'frame01 +=0')
-            // .fromTo([bg02_mask01Ref.current], { scaleY: 0 }, { scaleY: 0.75, ease: 'power3.out', repeat: 1, yoyo: true, duration: animDuration03 }, 'frame01 +=0')
 
             .fromTo([bg02Ref02.current], { y: -250 }, { y: 250, ease: 'power3.in', duration: animDuration03 }, 'frame01 +=0.25')
             .fromTo([bg02_mask02Ref.current], { y: 250 }, { y: -250, ease: 'power3.in', duration: animDuration03 }, 'frame01 +=0.25')
-            // .fromTo([bg02_mask02Ref.current], { scaleY: 0 }, { scaleY: 0.75, ease: 'power3.out', repeat: 1, yoyo: true, duration: animDuration03 }, 'frame01 +=0.375')
 
-            .fromTo([logo_NMTG_spRef.current], { scale: 0.5, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, ease: 'back.inOut(1)', duration: animDuration03 }, 'frame01 +=0.5')
+            .fromTo([logo_NMTG_spRef.current], { y: 95, scale: 0.5, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, ease: 'back.inOut(1)', duration: animDuration03 }, 'frame01 +=0.5')
+            // .fromTo([logo_NMTG_spRef.current], { x: 38, y: 95, scale: 0.5, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, ease: 'back.inOut(1)', duration: animDuration03 }, 'frame01 +=0.5')
 
             //#endregion ==================== FRAME 01 ====================
 
@@ -164,7 +184,7 @@ export default function NMTG_26903() {
             //#region ==================== FRAME 02 ====================
 
             .to([logo_NMTG_spRef.current], { y: 15, scale: 0.777777777777778, ease: 'power3.out', duration: animDuration02 }, 'frame02 +=1')
-            .fromTo([bottleRef.current], { y: 35, scale: 1.5, autoAlpha: 0 }, { y: 15, scale: 1, autoAlpha: 1, ease: 'power3.out', duration: animDuration02 }, 'frame02 +=1')
+            .fromTo([bottleRef.current], { x: 105, y: 32, scale: 1.5, autoAlpha: 0 }, { y: 12, scale: 1, autoAlpha: 1, ease: 'power3.out', duration: animDuration02 }, 'frame02 +=1')
 
             //#endregion ==================== FRAME 02 ====================
 
@@ -176,25 +196,34 @@ export default function NMTG_26903() {
 
             .to([bottleRef.current], { scale: 0.75, autoAlpha: 0, ease: 'power3.out', duration: animDuration02 }, 'frame03 +=1')
 
-            .fromTo([gwpRef.current], { x: -60, y: 40, autoAlpha: 0 }, { y: -10, autoAlpha: 1, ease: 'power3.out', duration: animDuration02 }, 'frame03 +=1')
+
+            .fromTo([gwpRef.current], { x: -60, y: 39, autoAlpha: 0 }, { y: -12, autoAlpha: 1, ease: 'power3.out', duration: animDuration02 }, 'frame03 +=1')
             .to([bg01Ref.current], { y: -85, ease: 'power3.out', duration: animDuration02 }, 'frame03 +=1')
 
-            .fromTo([copy01Ref.current], { x: 42, y: -24, scale: 0.5, autoAlpha: 0 }, { x: 62, autoAlpha: 1, ease: 'power3.out', duration: animDuration02 }, 'frame03 +=1.25')
-            .fromTo([legalRef.current], { x: 57, y: 6, scale: 0.5, autoAlpha: 0 }, { x: 77, autoAlpha: 1, ease: 'power3.out', duration: animDuration02 }, 'frame03 +=1.25')
+            .fromTo([copy01Ref.current], { x: 42.25, y: -25.5, scale: 0.5, autoAlpha: 0 }, { x: 62.25, autoAlpha: 1, ease: 'power3.out', duration: animDuration02 }, 'frame03 +=1.25')
+            .fromTo([legalRef.current], { x: 58, y: 5, scale: 0.5, autoAlpha: 0 }, { x: 78, autoAlpha: 1, ease: 'power3.out', duration: animDuration02 }, 'frame03 +=1.25')
 
-            .fromTo([ctaRef.current], { y: 20, autoAlpha: 0 }, { y: 0, autoAlpha: 1, ease: 'power3.out', duration: animDuration02 }, 'frame03 +=2')
+            .fromTo([ctaRef.current], { y: 20, autoAlpha: 0 }, { y: 0, autoAlpha: 1, ease: 'power3.out', duration: animDuration01 }, 'frame03 +=2.125')
+
+            // .fromTo([gwpRef.current], { x: 5, y: 38, autoAlpha: 0 }, { y: -13, autoAlpha: 1, ease: 'power3.out', duration: animDuration02 }, 'frame03 +=1')
+            // .to([bg01Ref.current], { y: -85, ease: 'power3.out', duration: animDuration02 }, 'frame03 +=1')
+
+            // .fromTo([copy01Ref.current], { x: 42.5, y: -25.5, scale: 0.5, autoAlpha: 0 }, { x: 62.5, autoAlpha: 1, ease: 'power3.out', duration: animDuration02 }, 'frame03 +=1.25')
+            // .fromTo([legalRef.current], { x: 75, y: 5, scale: 0.5, autoAlpha: 0 }, { x: 95, autoAlpha: 1, ease: 'power3.out', duration: animDuration02 }, 'frame03 +=1.25')
+
+            // .fromTo([ctaRef.current], { y: 20, autoAlpha: 0 }, { y: 0, autoAlpha: 1, ease: 'power3.out', duration: animDuration01 }, 'frame03 +=2.125')
 
             // #endregion ==================== FRAME 03 ====================
         ;
 
     // }, []);
-    }, [animDuration02, animDuration03, animDuration04]);
+    }, [animDuration01, animDuration02, animDuration03, animDuration04]);
 
-    //#endregion ==================== useEffect ====================
+    //#endregion ==================== useEffect / useLayoutEffect ====================
 
 
     return (
-        <div className='banner300x250 nmtg_26903'>
+        <div className='banner300x250 nmtg_26903' ref={nmtg_26903Ref}>
             {/* <h1>BSPS_26897 300x250 Component</h1> */}
 
             {/* <div className='bannerImg' ref={modelRef}><img src={model} alt='model' /></div> */}
@@ -314,7 +343,7 @@ export default function NMTG_26903() {
             <div className='bannerImg' ref={copy01Ref}><img src={copy01} alt='copy01' /></div>
             <div className='bannerImg' ref={legalRef}><img src={legal} alt='legal' /></div>
 
-            <div className='bannerImg' ref={bottleRef}><img src={bottle} alt='bottle' /></div>
+            <div className='bannerImg nmmn_bottle' ref={bottleRef}><img src={bottle} alt='bottle' /></div>
             <div className='bannerImg' ref={gwpRef}><img src={gwp} alt='gwp' /></div>
 
             <div className='bannerImg cta' ref={ctaRef}><img src={cta} alt='cta' /></div>

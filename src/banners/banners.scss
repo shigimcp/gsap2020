@@ -6,11 +6,13 @@ h1 {
 }
 
 .banner300x250 {
-    // border: 2px solid #0000ff;
+    // border: 2px solid #0000ff !important;
 
     // background: #000000;
     // background-image: url(../banners/26897_BS_PRIVATE_SHOW_GWP_PR_Walgreens_300x250/images/Xframes/26897_BS_PRIVATE_SHOW_GWP_PR_Walgreens_300x250_retina_03.jpg);
     // background-size: contain;
+
+    vertical-align: top;
 
     width: 300px;
     height: 250px;
@@ -20,17 +22,21 @@ h1 {
 
     position: relative;
 
+    display: inline-block;
+
     overflow: hidden;
 }
 
 
 .banner300x600 {
-    // border: 2px solid #0000ff;
+    // border: 2px solid #ff00ff !important;
     // border: 1px inset #ee70bc;
 
     // background: #000000;
     // background-image: url(../banners/CR_11155_MINAJESTY_2014_US_DIGITAL_300x600/images/CR_11155_MINAJESTY_2014_US_DIGITAL_300x600_walgreens.jpg);
     // background-size: contain;
+
+    vertical-align: top;
 
     width: 300px;
     height: 600px;
@@ -39,6 +45,8 @@ h1 {
     padding: 0;
 
     position: relative;
+
+    display: inline-block;
 
     overflow: hidden;
 }
@@ -53,7 +61,7 @@ h1 {
 
     // opacity: 0.5;
 
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
 
     position: absolute;
