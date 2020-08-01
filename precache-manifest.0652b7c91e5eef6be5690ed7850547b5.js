@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5fe829513a8a3d466a704e84aebefde9",
+    "revision": "ed30fc4c6e0bbd6266ebb924559d3924",
     "url": "/gsap2020/index.html"
   },
   {
-    "revision": "e7bb15b5cab019c0fc48",
-    "url": "/gsap2020/static/css/main.e5e8896f.chunk.css"
+    "revision": "1694c76d90c21aeb70f6",
+    "url": "/gsap2020/static/css/main.aec95b55.chunk.css"
   },
   {
     "revision": "80198c2ca572df942330",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/gsap2020/static/js/2.66840021.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e7bb15b5cab019c0fc48",
+    "revision": "1694c76d90c21aeb70f6",
     "url": "/gsap2020/static/js/main.ec9104d4.chunk.js"
   },
   {

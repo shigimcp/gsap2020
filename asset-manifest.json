@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/gsap2020/static/css/main.e5e8896f.chunk.css",
+    "main.css": "/gsap2020/static/css/main.aec95b55.chunk.css",
     "main.js": "/gsap2020/static/js/main.ec9104d4.chunk.js",
     "main.js.map": "/gsap2020/static/js/main.ec9104d4.chunk.js.map",
     "runtime-main.js": "/gsap2020/static/js/runtime-main.3d68c562.js",
@@ -8,9 +8,9 @@
     "static/js/2.66840021.chunk.js": "/gsap2020/static/js/2.66840021.chunk.js",
     "static/js/2.66840021.chunk.js.map": "/gsap2020/static/js/2.66840021.chunk.js.map",
     "index.html": "/gsap2020/index.html",
-    "precache-manifest.c8f2abc8b75963d67743939fa4c05919.js": "/gsap2020/precache-manifest.c8f2abc8b75963d67743939fa4c05919.js",
+    "precache-manifest.0652b7c91e5eef6be5690ed7850547b5.js": "/gsap2020/precache-manifest.0652b7c91e5eef6be5690ed7850547b5.js",
     "service-worker.js": "/gsap2020/service-worker.js",
-    "static/css/main.e5e8896f.chunk.css.map": "/gsap2020/static/css/main.e5e8896f.chunk.css.map",
+    "static/css/main.aec95b55.chunk.css.map": "/gsap2020/static/css/main.aec95b55.chunk.css.map",
     "static/js/2.66840021.chunk.js.LICENSE.txt": "/gsap2020/static/js/2.66840021.chunk.js.LICENSE.txt",
     "static/media/BSPS_bottle.png": "/gsap2020/static/media/BSPS_bottle.dab95377.png",
     "static/media/BSPS_image.jpg": "/gsap2020/static/media/BSPS_image.6bc465a8.jpg",
@@ -56,7 +56,7 @@
   "entrypoints": [
     "static/js/runtime-main.3d68c562.js",
     "static/js/2.66840021.chunk.js",
-    "static/css/main.e5e8896f.chunk.css",
+    "static/css/main.aec95b55.chunk.css",
     "static/js/main.ec9104d4.chunk.js"
   ]
 }
