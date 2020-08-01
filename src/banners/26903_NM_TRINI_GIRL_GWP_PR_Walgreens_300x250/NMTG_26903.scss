@@ -1,5 +1,5 @@
 .nmtg_26903 {
-    border: 1px inset #e6437b;
+    // border: 1px inset #e6437b;
 
     // background: #000000;
     // background-image: url(./images/Xframes/26903_NM_TRINI_GIRL_GWP_PR_Walgreens_300x250_retina_01.jpg);
@@ -135,5 +135,12 @@
         position: absolute;
         bottom: 0;
         right: 0;
+    }
+
+    .clickTag {
+        border: 1px solid #e6437b !important;
+
+        width: calc(100% - 1.75px);
+        height: calc(100% - 1.5px);
     }
 }

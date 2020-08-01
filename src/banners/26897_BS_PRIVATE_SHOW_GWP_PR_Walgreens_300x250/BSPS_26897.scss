@@ -1,5 +1,5 @@
 .bsps_26897 {
-    border: 1px inset #ee70bc;
+    // border: 1px inset #ee70bc;
 
     // background: #000000;
     // background-image: url(./images/Xframes/26897_BS_PRIVATE_SHOW_GWP_PR_Walgreens_300x250_retina_01.jpg);
@@ -60,5 +60,12 @@
             margin: 3.75% 16.666666666666667%;
             padding: 0;
         }
+    }
+
+    .clickTag {
+        border: 1px solid #ee70bc !important;
+
+        width: calc(100% - 1.75px);
+        height: calc(100% - 1.5px);
     }
 }
