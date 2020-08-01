@@ -85,14 +85,14 @@ export default function NMMN_11155() {
 
     const LOGO_NM_MinajestyRef = useRef(null);
 
-    const logo_NM_Minajesty_baseREF = useRef(null);
+    const logo_NM_Minajesty_baseRef = useRef(null);
 
     const LOGO_NM_Minajesty_hedRef = useRef(null);
     const LOGO_NM_Minajesty_nickiRef = useRef(null);
     const LOGO_NM_Minajesty_minajRef = useRef(null);
     const LOGO_NM_Minajesty_sultryRef = useRef(null);
 
-    const logo_NM_Minajesty_dsREF = useRef(null);
+    const logo_NM_Minajesty_dsRef = useRef(null);
 
     const LOGO_NM_Minajesty_hed_dsRef = useRef(null);
     const LOGO_NM_Minajesty_nicki_dsRef = useRef(null);
@@ -144,8 +144,10 @@ export default function NMMN_11155() {
             .set([modelRef.current], { autoAlpha: 0 }, 'frame00')
 
             // .set([LOGO_NM_MinajestyRef.current], { autoAlpha: 0 }, 'frame00')
-            // .set([logo_NM_Minajesty_baseREF.current], { autoAlpha: 0 }, 'frame00')
-            // .set([logo_NM_Minajesty_dsREF.current], { autoAlpha: 0 }, 'frame00')
+            // .set([logo_NM_Minajesty_baseRef.current], { autoAlpha: 0 }, 'frame00')
+            // .set([logo_NM_Minajesty_dsRef.current], { autoAlpha: 0 }, 'frame00')
+
+            .set([LOGO_NM_Minajesty_sultryRef.current], { autoAlpha: 0 }, 'frame00')
 
             .set([bottleRef.current], { autoAlpha: 0 }, 'frame00')
             .set([ctaRef.current], { autoAlpha: 0 }, 'frame00')
@@ -163,10 +165,10 @@ export default function NMMN_11155() {
 
             // -------------------- FRAME01 --------------------
 
-            .set([LOGO_NM_MinajestyRef.current], { x: -124, y: 36 }, 'frame00')
-            .set([bottleRef.current], { x: 12, y: 465 }, 'frame00')
+            // .set([LOGO_NM_MinajestyRef.current], { x: -124, y: 36 }, 'frame00')
+            // .set([bottleRef.current], { x: 12, y: 465 }, 'frame00')
             .set([LOGO_NM_Minajesty_sultryRef.current], { x: -13, y: 403, scale: 1.3 }, 'frame01')
-            .set([ctaRef.current], { y: 550 }, 'frame00')
+            // .set([ctaRef.current], { y: 550 }, 'frame00')
 
             //#endregion -------------------- SET TRANSFORMS --------------------
 
@@ -175,14 +177,16 @@ export default function NMMN_11155() {
 
             //#region ==================== FRAME 01 ====================
 
-            .fromTo([LOGO_NM_MinajestyRef.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: "rough({template: none.out, strength: 5, points: 50, taper: 'out', randomize: true, clamp: false})", duration: animDuration05 }, 'frame01 +=0')
+            // .fromTo([LOGO_NM_MinajestyRef.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: "rough({template: none.out, strength: 5, points: 50, taper: 'out', randomize: true, clamp: false})", duration: animDuration05 }, 'frame01 +=0')
+            .fromTo([logo_NM_Minajesty_dsRef.current, logo_NM_Minajesty_baseRef.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: "rough({template: none.out, strength: 5, points: 50, taper: 'out', randomize: true, clamp: false})", duration: animDuration05 }, 'frame01 +=0')
 
             .fromTo([modelRef.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.out', duration: animDuration04 }, 'frame01 +=2')
 
             .fromTo([bottleRef.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.out', duration: animDuration02 }, 'frame01 +=2.5')
             .fromTo([LOGO_NM_Minajesty_sultryRef.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.out', duration: animDuration02 }, 'frame01 +=2.5625')
 
-            .fromTo([ctaRef.current], { y:525, autoAlpha: 0 }, { y: 550, autoAlpha: 1, ease: 'power3.out', duration: animDuration01 }, 'frame01 +=3.5')
+            // .fromTo([ctaRef.current], { y: 525, autoAlpha: 0 }, { y: 550, autoAlpha: 1, ease: 'power3.out', duration: animDuration01 }, 'frame01 +=3.5')
+            .fromTo([ctaRef.current], { y: -25, autoAlpha: 0 }, { y: 0, autoAlpha: 1, ease: 'power3.out', duration: animDuration01 }, 'frame01 +=3.5')
 
             //#endregion ==================== FRAME 01 ====================
         ;
@@ -201,9 +205,13 @@ export default function NMMN_11155() {
 
             <div className='bgDiv' ref={bgRef}><img src={bg} alt='bg' /></div>
             <div className='modelDiv' ref={modelRef}><img src={model} alt='model' /></div>
-            {/* <div className='bottleDiv' ref={bottleRef}><img src={bottle} alt='bottle' /></div> */}
             <div className='bottleDiv' ref={bottleRef}><img src={bottle} alt='bottle' /></div>
 
+        {/* 
+            <img src={bg} className='bgDiv' alt='bg' ref={bgRef} />
+            <img src={model} className='modelDiv' alt='model' ref={modelRef} />
+            <img src={bottle} className='bottleDiv' alt='bottle' ref={bottleRef} />
+        */}
 
         {/* #region -------------------- SVG FILTERS (logo_NM_Minajesty) -------------------- */}
             
@@ -257,16 +265,16 @@ export default function NMMN_11155() {
 
                 </defs>
 
-                {/* <g className='logo_NM_Minajesty_ds' ref={logo_NM_Minajesty_dsREF}> */}
-                <g className='logo_NM_Minajesty_ds' ref={logo_NM_Minajesty_dsREF} filter='url(#dsFilter1)'>
+                {/* <g className='logo_NM_Minajesty_ds' ref={logo_NM_Minajesty_dsRef}> */}
+                <g className='logo_NM_Minajesty_ds' ref={logo_NM_Minajesty_dsRef} filter='url(#dsFilter1)'>
                     <image href={LOGO_NM_Minajesty_hed} width='250' height='75' ref={LOGO_NM_Minajesty_hed_dsRef} />
                     <image href={LOGO_NM_Minajesty_nicki} width='250' height='75' ref={LOGO_NM_Minajesty_nicki_dsRef} />
                     <image href={LOGO_NM_Minajesty_minaj} width='250' height='75' ref={LOGO_NM_Minajesty_minaj_dsRef} />
                     {/* <image href={LOGO_NM_Minajesty_sultry} width='250' height='75' ref={LOGO_NM_Minajesty_sultry_dsRef} /> */}
                 </g>
 
-                <g className='logo_NM_Minajesty_base' ref={logo_NM_Minajesty_baseREF}>
-                {/* <g className='logo_NM_Minajesty_base' ref={logo_NM_Minajesty_baseREF} filter='url(#colorFilter)'> */}
+                <g className='logo_NM_Minajesty_base' ref={logo_NM_Minajesty_baseRef}>
+                {/* <g className='logo_NM_Minajesty_base' ref={logo_NM_Minajesty_baseRef} filter='url(#colorFilter)'> */}
                     <image href={LOGO_NM_Minajesty_hed} width='250' height='75' ref={LOGO_NM_Minajesty_hedRef} />
                     <image href={LOGO_NM_Minajesty_nicki} width='250' height='75' ref={LOGO_NM_Minajesty_nickiRef} />
                     <image href={LOGO_NM_Minajesty_minaj} width='250' height='75' ref={LOGO_NM_Minajesty_minajRef} />
