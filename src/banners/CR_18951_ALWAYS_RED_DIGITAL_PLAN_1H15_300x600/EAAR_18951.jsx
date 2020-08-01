@@ -52,29 +52,35 @@ import cta from './images/cta_shop.svg';
 //#endregion ==================== IMPORTS ====================
 
 
-
-
-
-
 export default function EAAR_18951() {
 
     //#region ==================== ANIMATION DURATIONs ====================
 
-    const staggerDuration = 0.75;
-    const staggerDelay = 0.0625;
+    const staggerDuration = 0.125;
+    const staggerDelay = 0.0375;
 
     // const animDuration00 = 0.125;
-    const animDuration01 = 0.5;
-    const animDuration02 = 1;
-    const animDuration02_5 = 1.25;
-    const animDuration03 = 1.5;
-    const animDuration04 = 2;
-    // const animDuration05 = 2.5;
-    // const animDuration06 = 3;
-    // const animDuration07 = 3.5;
-    // const animDuration08 = 4;
-    // const animDuration09 = 4.5;
-    // const animDuration10 = 5;
+    const animDuration00_5 = 0.50;
+    const animDuration01 = 1.00;
+    const animDuration01_25 = 1.25;
+    const animDuration01_5 = 1.50;
+    const animDuration02 = 2.00;
+    // const animDuration02_5 = 2.50;
+    // const animDuration03 = 3.00;
+    // const animDuration03_5 = 3.50;
+    // const animDuration04 = 4.00;
+    // const animDuration04_5 = 4.50;
+    // const animDuration05 = 5.00;
+    // const animDuration05_5 = 5.50;
+    // const animDuration06 = 6.00;
+    // const animDuration06_5 = 6.50;
+    // const animDuration07 = 7.00;
+    // const animDuration07_5 = 7.50;
+    // const animDuration08 = 8.00;
+    // const animDuration08_5 = 8.50;
+    // const animDuration09 = 9.00;
+    // const animDuration09_5 = 9.50;
+    // const animDuration10 = 10.00;
 
     //#endregion ==================== ANIMATION DURATIONs ====================
 
@@ -118,35 +124,36 @@ export default function EAAR_18951() {
 
     const ctaRef = useRef(null);
 
-    //#endregion ==================== ASSETS Ref ====================
+    const clickTagRef = useRef(null);
 
+    //#endregion ==================== ASSETS Ref ====================
 
 
     //#region ==================== FUNCTIONS ====================
 
     //#region -------------------- FUNCTION: splitText(thisContainer, thisCopy) --------------------
 
-    function splitText(thisContainer, thisCopy) {
+    function splitText(thisContainer, thisCopy, thisClassname) {
 
-        console.log('');
-        console.log('------------------------- splitText(thisContainer, thisCopy) triggered! -------------------------');
-        console.log('thisContainer.id = ' + thisContainer.id + '     thisCopy = ' + thisCopy);
+        // console.log('');
+        // console.log('------------------------- splitText(thisContainer, thisCopy) triggered! -------------------------');
+        // console.log('thisContainer.id = ' + thisContainer.id + '     thisCopy = ' + thisCopy);
 
         const thisCopyResponse = thisCopy.split('');
-        console.log('thisCopyResponse.length = ' + thisCopyResponse.length + '     thisCopyResponse = ' + thisCopyResponse)
+        // console.log('thisCopyResponse.length = ' + thisCopyResponse.length + '     thisCopyResponse = ' + thisCopyResponse)
 
         for (let c = 0; c < thisCopyResponse.length; c++) {
 
             // console.log('thisCopyResponse[c] = "' + thisCopyResponse[c] + '"');
 
             const node = document.createElement('p');
-            node.className = 'char01';
+            node.className = thisClassname;
 
             if (thisCopyResponse[c] !== ' ') {
                 node.innerHTML = thisCopyResponse[c];
                 thisContainer.append(node);
             } else {
-                console.log('This is a space!');
+                // console.log('This is a space!');
                 node.innerHTML = '&nbsp;';
                 thisContainer.append(node);
             }
@@ -197,6 +204,50 @@ export default function EAAR_18951() {
 
     //#region -------------------- FUNCTION: PARTICLES - addParticle(thisContainer), positionParticle(thisContainer), particleAnim(thisParticle) --------------------
 
+    //#region - - - - - - - - - - - FUNCTION: removeAllChildNodes(parent) - - - - - - - - - - -
+
+    // const removeAllChildNodes = useCallback((parent) => {
+    function removeAllChildNodes(parent) {
+
+        // console.log('');
+        // console.log('------------------------- removeAllChildNodes(parent) triggered! -------------------------');
+
+        // console.log('parent = ' + parent);
+        // console.log('parent.id = ' + parent.id);
+
+        while (parent.firstChild) {
+            parent.removeChild(parent.firstChild);
+        }
+    }
+    // }, []);
+
+    //#endregion - - - - - - - - - - - FUNCTION: removeAllChildNodes(thisContainer) - - - - - - - - - - -
+
+
+    //#region - - - - - - - - - - - FUNCTION: removeParticle(thisParticle) - - - - - - - - - - -
+
+    // const removeParticle = useCallback((thisParticle) => {
+
+    //     // console.log('');
+    //     // console.log('------------------------- removeParticle(thisParticle) triggered! -------------------------');
+    //     // console.log('NOTE: the error check below does not work 100%');
+    //     // console.log('It fails if I click before the full run of the particle animations(s) complete.');
+
+    //     // console.log('thisParticle = ' + thisParticle);
+    //     // console.log('thisParticle.id = ' + thisParticle.id);
+
+    //     if (thisParticle == null) {
+    //         console.log('***** NOPE! *****');
+    //         console.error();
+    //     } else {
+    //         thisParticle.parentNode.removeChild(thisParticle);
+    //     }
+
+    // }, []);
+
+    //#endregion - - - - - - - - - - - FUNCTION: removeParticle(thisParticle) - - - - - - - - - - -
+
+
     //#region - - - - - - - - - - - FUNCTION: particleAnim(thisParticle) - - - - - - - - - - -
 
     const particleAnim = useCallback((thisParticle) => {
@@ -206,9 +257,11 @@ export default function EAAR_18951() {
 
         // console.log('thisParticle.id = ' + thisParticle.id);
 
-        gsap.to([thisParticle], animDuration01, { autoAlpha: 1, repeat: 1, yoyo: true, ease: 'sine.inOut', delay: randRange2(0, 1.5) });
+        gsap.to([thisParticle], animDuration00_5, { autoAlpha: 1, repeat: 1, yoyo: true, ease: 'sine.inOut', delay: randRange2(0, 1.5) });
+        // gsap.to([thisParticle], animDuration00_5, { autoAlpha: 1, repeat: 1, yoyo: true, ease: 'sine.inOut', delay: randRange2(0, 1.5), onComplete: removeParticle, onCompleteParams: [thisParticle] });
 
     }, []);
+    // }, [removeParticle]);
 
     //#endregion - - - - - - - - - - - FUNCTION: particleAnim(thisParticle) - - - - - - - - - - -
 
@@ -279,11 +332,34 @@ export default function EAAR_18951() {
 
     //#endregion -------------------- FUNCTION: PARTICLES - addParticle(thisContainer), positionParticle(thisContainer), particleAnim(thisParticle) --------------------
 
+
+    //#region -------------------- FUNCTION: handleClick() - GSAP timeline control --------------------
+
+    function handleClick() {
+    // const handleClick = useCallback(() => {
+
+        // console.log('');
+        // console.log('------------------------- handleClick() -------------------------');
+
+        removeAllChildNodes(particleContainerRef.current);
+
+        tl.pause(0);
+        tl.restart();
+    }
+    // }, [tl]);
+
+    //#endregion -------------------- FUNCTION: handleClick() - GSAP timeline control --------------------
+
     //#endregion ==================== FUNCTIONS ====================
 
 
 
     //#region ==================== useEffect / useLayoutEffect ====================
+
+    const numParticle = 50;
+
+    const tl = gsap.timeline({ delay: 0 });
+
 
     // useEffect(() => {
     useLayoutEffect(() => {
@@ -291,14 +367,10 @@ export default function EAAR_18951() {
         const copy01Text = 'Light up the town';
         const copy02Text = 'The daring new fragrance';
 
-        splitText(copy01Ref.current, copy01Text);
-        splitText(copy02Ref.current, copy02Text);
+        splitText(copy01Ref.current, copy01Text, 'char01');
+        splitText(copy02Ref.current, copy02Text, 'char02');
 
-
-        const numParticle = 50;
-
-        // const tl = gsap.timeline({ delay: 0, paused: 'true' });
-        const tl = gsap.timeline({ delay: 0 });
+        // addParticle(particleContainerRef.current, numParticle);
 
         tl
 
@@ -322,40 +394,46 @@ export default function EAAR_18951() {
             // .set([logo_RED_always_rRef.current], { autoAlpha: 0 }, 'frame00')
             // .set([logo_RED_red_rRef.current], { autoAlpha: 0 }, 'frame00')
 
-            // .set([logo_RED_ds_kRef.current], { autoAlpha: 0 }, 'frame00')
+            .set([logo_RED_ds_kRef.current], { autoAlpha: 0 }, 'frame00')
             // .set([logo_RED_ds_rRef.current], { autoAlpha: 0 }, 'frame00')
             // .set([logo_RED_ds_wRef.current], { autoAlpha: 0 }, 'frame00')
 
 
-            // .set([modelRef.current], { autoAlpha: 0 }, 'frame00')
+            .set([modelRef.current], { autoAlpha: 0 }, 'frame00')
 
 
             // .set([bottleRef.current], { autoAlpha: 0 }, 'frame00')
 
-            // .set([bottle_baseRef.current], { autoAlpha: 0 }, 'frame00')
-            // .set([bottle_ltRef.current], { autoAlpha: 0 }, 'frame00')
+            .set([bottle_baseRef.current], { autoAlpha: 0 }, 'frame00')
+            .set([bottle_ltRef.current], { autoAlpha: 0 }, 'frame00')
 
-            // // .set([flash01Ref.current], { autoAlpha: 0 }, 'frame00')
+            // .set([flash01Ref.current], { autoAlpha: 0 }, 'frame00')
 
 
             // .set([copy01Ref.current], { autoAlpha: 0 }, 'frame00')
             // .set([copy02Ref.current], { autoAlpha: 0 }, 'frame00')
-            // .set([ctaRef.current], { autoAlpha: 0 }, 'frame00')
+
+            .set([copy01Ref.current.children], { autoAlpha: 0 }, 'frame00')
+            .set([copy02Ref.current.children], { autoAlpha: 0 }, 'frame00')
+
+            .set([ctaRef.current], { autoAlpha: 0 }, 'frame00')
 
             //#endregion -------------------- autoAlpha --------------------
 
 
+            //#region -------------------- SET TRANSFORMS --------------------
+
             //#region -------------------- SET TRANSFORM ORIGiNS --------------------
 
             .set([bottleRef.current], { transformOrigin: '50% 0', immediateRender: true }, 'frame00')
-            // .set([logo_REDref.current], { transformOrigin: '50% 100%', immediateRender: true }, 'frame00')
+            .set([bgRef.current], { transformOrigin: '50% 25%', immediateRender: true }, 'frame00')
 
             //#endregion -------------------- SET TRANSFORM ORIGiNS --------------------
 
 
             //#region -------------------- FRAME01 --------------------
 
-            // .set([logo_REDref.current], { y: 230 }, 'frame00')
+            .set([logo_REDref.current], { y: 230 }, 'frame00')
 
             //#endregion -------------------- FRAME01 --------------------
 
@@ -373,64 +451,68 @@ export default function EAAR_18951() {
 
             //#endregion -------------------- FRAME03 --------------------
 
+            //#endregion -------------------- SET TRANSFORMS --------------------
+
             //#endregion ==================== INITIALIZE OBJECTS ====================
 
 
             //#region ==================== FRAME 01 ====================
 
-            .call(addParticle, [particleContainerRef.current, numParticle], 'frame00 +=0')
-            .fromTo([logo_REDref.current], { y: 230, scale: 0.5, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, ease: 'power3.out', duration: animDuration04 }, 'frame00 +=0')
+            .call(addParticle, [particleContainerRef.current, numParticle], 'frame01 +=0')
+            .fromTo([logo_REDref.current], { y: 230, scale: 0.5, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, ease: 'power3.out', duration: animDuration02 }, 'frame01 +=0')
 
             //#endregion ==================== FRAME 01 ====================
 
 
             //#region ==================== FRAME 02 ====================
 
-            .fromTo([modelRef.current], { scale: 0.9375, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, ease: 'power3.out', duration: animDuration04 }, 'frame00 +=1.75')
+            .fromTo([modelRef.current], { scale: 0.9375, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, ease: 'power3.out', duration: animDuration02 }, 'frame02 -=0.25')
 
-            .fromTo([logo_RED_ds_kRef.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.out', duration: animDuration04 }, 'frame00 +=1.75')
-            .to([logo_RED_ds_rRef.current, logo_RED_ds_wRef.current], { autoAlpha: 0, ease: 'power3.out', duration: animDuration04 }, 'frame00 +=1.75')
+            .fromTo([logo_RED_ds_kRef.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.out', duration: animDuration02 }, 'frame02 -=0.25')
+            // .to([logo_RED_ds_rRef.current, logo_RED_ds_wRef.current], { autoAlpha: 0, ease: 'power3.out', duration: animDuration02 }, 'frame02 -=0.25')
+            .fromTo([logo_RED_ds_rRef.current, logo_RED_ds_wRef.current], { autoAlpha: 1 }, { autoAlpha: 0, ease: 'power3.out', duration: animDuration02 }, 'frame02 -=0.25')
 
             //#endregion ==================== FRAME 02 ====================
 
 
             //#region ==================== FRAME 03 ====================
 
-            .to([modelRef.current, logo_REDref.current], { autoAlpha: 0, ease: 'power3.in', duration: animDuration03, onComplete: nextPos, onCompleteParams: [logo_REDref.current, 0, 370, 1, 0] }, 'frame01 +=0')
+            .to([modelRef.current, logo_REDref.current], { autoAlpha: 0, ease: 'power3.in', duration: animDuration01_5, onComplete: nextPos, onCompleteParams: [logo_REDref.current, 0, 370, 1, 0] }, 'frame03 +=0')
 
-            .fromTo([bgRef.current], { scale: 1.25 }, { scale: 1, ease: 'power3.in', duration: animDuration02_5 }, 'frame01 +=0.375')
+            .fromTo([bgRef.current], { scale: 1.25 }, { scale: 1, ease: 'power3.in', duration: animDuration01_25 }, 'frame03 +=0.375')
 
-            .fromTo([bg_ltRef.current], { autoAlpha: 0 }, { autoAlpha: 1, repeat: 1, yoyo: true, ease: 'power3.in', duration: animDuration02 }, 'frame01 +=1.0625')
-            .fromTo([bottle_ltRef.current], { autoAlpha: 0 }, { autoAlpha: 1, repeat: 1, yoyo: true, ease: 'power3.in', duration: animDuration02 }, 'frame01 +=1.0625')
+            .fromTo([bg_ltRef.current], { autoAlpha: 0 }, { autoAlpha: 1, repeat: 1, yoyo: true, ease: 'power3.in', duration: animDuration01 }, 'frame03 +=1.0625')
+            .fromTo([bottle_ltRef.current], { autoAlpha: 0 }, { autoAlpha: 1, repeat: 1, yoyo: true, ease: 'power3.in', duration: animDuration01 }, 'frame03 +=1.0625')
 
-            .fromTo([bottle_baseRef.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.in', duration: animDuration03 }, 'frame01 +=1.125')
+            .fromTo([bottle_baseRef.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.in', duration: animDuration01_5 }, 'frame03 +=1.125')
 
-            .to([logo_REDref.current], { autoAlpha: 1, ease: 'power3.in', duration: animDuration03 }, 'frame01 +=2')
+            .to([logo_REDref.current], { autoAlpha: 1, ease: 'power3.in', duration: animDuration01_5 }, 'frame03 +=2')
 
-            .staggerFromTo(copy01Ref.current.children, staggerDuration, { autoAlpha: 0, rotationY: 90 }, { autoAlpha: 1, rotationY: 0 }, staggerDelay, 'frame01 +=1.5')
-            .staggerFromTo(copy02Ref.current.children, staggerDuration, { autoAlpha: 0, rotationY: 90 }, { autoAlpha: 1, rotationY: 0 }, staggerDelay, 'frame01 +=4')
+            .staggerFromTo(copy01Ref.current.children, staggerDuration, { autoAlpha: 0, rotationY: 90 }, { autoAlpha: 1, rotationY: 0 }, staggerDelay, 'frame03 +=1.5')
+            .staggerFromTo(copy02Ref.current.children, staggerDuration, { autoAlpha: 0, rotationY: 90 }, { autoAlpha: 1, rotationY: 0 }, staggerDelay, 'frame03 +=4')
 
-            .fromTo([ctaRef.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.in', duration: animDuration01 }, 'frame01 +=5')
+            .fromTo([ctaRef.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.in', duration: animDuration00_5 }, 'frame03 +=5')
 
             // #endregion ==================== FRAME 03 ====================
         ;
 
         //tl.duration(1.5);
-        console.log('timing = ' + tl.duration() + ' secs');
+        console.log('');
+        console.log('tl timing = ' + tl.duration() + ' secs');
 
-    }, [addParticle, nextPos]);
+    }, [tl, addParticle, nextPos]);
 
     //#endregion ==================== useEffect / useLayoutEffect ====================
 
 
     return (
-        <div className='banner300x600 eaar_18951'>
+        <div className='banner300x600 eaar_18951' id='eaar_18951ID'>
             {/* <h1>EAAR_18951 300x600 Component</h1> */}
 
-            <div className='bgEAAR' ref={bgRef}>
-                <img src={bg} alt='bg' ref={bg_baseRef} />
-                <img src={bg_dk} alt='bg_dk' ref={bg_dkRef} />
-                <img src={bg_lt} alt='bg_lt' ref={bg_ltRef} />
+            <div className='bgDiv' id='bgDivID' ref={bgRef}>
+                <img src={bg} id='bgID' alt='bg' ref={bg_baseRef} />
+                <img src={bg_dk} id='bg_dkID' alt='bg_dk' ref={bg_dkRef} />
+                <img src={bg_lt} id='bg_ltID' alt='bg_lt' ref={bg_ltRef} />
             </div>
 
 
@@ -438,35 +520,37 @@ export default function EAAR_18951() {
             <div className='particleContainer' id='particleContainerID' ref={particleContainerRef}></div>
 
 
-            <img className='modelImg' src={model} alt='model' ref={modelRef} />
+            <img className='modelDiv' id='modelDivID' src={model} alt='model' ref={modelRef} />
 
-            <div className='bottleEAAR' ref={bottleRef}>
-                <img src={bottle} alt='bottle' ref={bottle_baseRef} />
-                <img src={bottle_lt} alt='bottle_lt' ref={bottle_ltRef} />
+            <div className='bottleDiv' id='bottleDivID' ref={bottleRef}>
+                <img src={bottle} id='bottleID' alt='bottle' ref={bottle_baseRef} />
+                <img src={bottle_lt} id='bottle_ltID' alt='bottle_lt' ref={bottle_ltRef} />
             </div>
 
-            <div className='logoEAAR' ref={logo_REDref}>
-                <div className='logoEAARds' ref={logo_RED_dsRef}>
-                    <img src={logo_RED_ds_k} alt='logo_RED_ds_k' ref={logo_RED_ds_kRef} />
-                    <img src={logo_RED_ds_r} alt='logo_RED_ds_r' ref={logo_RED_ds_rRef} />
-                    <img src={logo_RED_ds_w} alt='logo_RED_ds_w' ref={logo_RED_ds_wRef} />
+            <div className='logo_EAAR' id='logo_EAARID' ref={logo_REDref}>
+                <div className='logo_EAARds' id='logo_EAARdsID' ref={logo_RED_dsRef}>
+                    <img src={logo_RED_ds_k} id='logo_RED_ds_kID' alt='logo_RED_ds_k' ref={logo_RED_ds_kRef} />
+                    <img src={logo_RED_ds_r} id='logo_RED_ds_rID' alt='logo_RED_ds_r' ref={logo_RED_ds_rRef} />
+                    <img src={logo_RED_ds_w} id='logo_RED_ds_wID' alt='logo_RED_ds_w' ref={logo_RED_ds_wRef} />
                 </div>
 
-                <div className='logoEAARbase' ref={logo_RED_baseRef}>
-                    <img src={logo_RED_ea_w} alt='logo_RED_ea_w' ref={logo_RED_ea_wRef} />
-                    <img src={logo_RED_always_r} alt='logo_RED_always_r' ref={logo_RED_always_rRef} />
-                    <img src={logo_RED_red_r} alt='logo_RED_red_r' ref={logo_RED_red_rRef} />
+                <div className='logo_EAARbase' id='logo_EAARbaseID' ref={logo_RED_baseRef}>
+                    <img src={logo_RED_ea_w} id='logo_RED_ea_wID' alt='logo_RED_ea_w' ref={logo_RED_ea_wRef} />
+                    <img src={logo_RED_always_r} id='logo_RED_always_rID' alt='logo_RED_always_r' ref={logo_RED_always_rRef} />
+                    <img src={logo_RED_red_r} id='logo_RED_red_rID' alt='logo_RED_red_r' ref={logo_RED_red_rRef} />
                 </div>
             </div>
 
-            {/* <p className='copy01' ref={copy01Ref}>Light up the town</p> */}
-            {/* <p className='copy02' ref={copy02Ref}>The daring new fragrance</p> */}
+            {/* <p className='copy01' id='copy01ID' ref={copy01Ref}>Light up the town</p> */}
+            {/* <p className='copy02' id='copy02ID' ref={copy02Ref}>The daring new fragrance</p> */}
 
-            <p className='copy01' ref={copy01Ref}></p>
-            <p className='copy02' ref={copy02Ref}></p>
+            <p className='copy01' id='copy01ID' ref={copy01Ref}></p>
+            <p className='copy02' id='copy02ID' ref={copy02Ref}></p>
 
-            <img src={cta} className='cta' alt='cta' ref={ctaRef} />
+            <img src={cta} className='cta' id='ctaID' alt='cta' ref={ctaRef} />
 
+            {/* <div className='clickTag' id='clickTagID' ref={clickTagRef} onClick={() => handleClick()}></div> */}
+            <div className='clickTag' id='clickTagID' ref={clickTagRef} onClick={handleClick}></div>
         </div>
     );
 }

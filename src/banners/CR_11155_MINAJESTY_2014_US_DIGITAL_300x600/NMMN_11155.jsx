@@ -51,16 +51,26 @@ export default function NMMN_11155() {
     // const staggerDelay = 0.0625;
 
     // const animDuration00 = 0.125;
-    // const animDuration01 = 0.5;
-    const animDuration02 = 1;
-    // const animDuration03 = 1.5;
-    const animDuration04 = 2;
-    const animDuration05 = 2.5;
-    // const animDuration06 = 3;
-    // const animDuration07 = 3.5;
-    const animDuration08 = 4;
-    // const animDuration09 = 4.5;
-    const animDuration10 = 5;
+    // const animDuration00_5 = 0.50;
+    const animDuration01 = 1.00;
+    // const animDuration01_5 = 1.50;
+    const animDuration02 = 2.00;
+    // const animDuration02_5 = 2.50;
+    // const animDuration03 = 3.00;
+    // const animDuration03_5 = 3.50;
+    const animDuration04 = 4.00;
+    // const animDuration04_5 = 4.50;
+    const animDuration05 = 5.00;
+    // const animDuration05_5 = 5.50;
+    // const animDuration06 = 6.00;
+    // const animDuration06_5 = 6.50;
+    // const animDuration07 = 7.00;
+    // const animDuration07_5 = 7.50;
+    // const animDuration08 = 8.00;
+    // const animDuration08_5 = 8.50;
+    // const animDuration09 = 9.00;
+    // const animDuration09_5 = 9.50;
+    // const animDuration10 = 10.00;
 
     //#endregion ==================== ANIMATION DURATIONs ====================
 
@@ -91,13 +101,38 @@ export default function NMMN_11155() {
 
     // const bottleTagRef = useRef(null);
 
+    const clickTagRef = useRef(null);
+
     //#endregion ==================== ASSETS Ref ====================
 
+
+    //#region ==================== FUNCTIONS ====================
+
+    //#region -------------------- FUNCTION: handleClick() --------------------
+
+    function handleClick() {
+
+        // console.log('');
+        // console.log('------------------------- handleClick() -------------------------');
+
+        tl.pause(0);
+        tl.restart();
+    }
+
+    //#endregion -------------------- FUNCTION: handleClick() --------------------
+
+    //#endregion ==================== FUNCTIONS ====================
+
+
+
+    //#region ==================== useEffect / useLayoutEffect ====================
+
+    const tl = gsap.timeline({ delay: 0 });
 
     // useEffect(() => {
     useLayoutEffect(() => {
 
-        const tl = gsap.timeline({ delay: 0 });
+        // const tl = gsap.timeline({ delay: 0 });
 
         tl
 
@@ -106,13 +141,14 @@ export default function NMMN_11155() {
             //#region -------------------- autoAlpha --------------------
 
             // .set([bgRef.current], { autoAlpha: 0 }, 'frame00')
-            // .set([modelRef.current], { autoAlpha: 0 }, 'frame00')
+            .set([modelRef.current], { autoAlpha: 0 }, 'frame00')
 
-            // // .set([LOGO_NM_MinajestyRef.current], { autoAlpha: 0 }, 'frame00')
-            // // .set([logo_NM_Minajesty_baseREF.current], { autoAlpha: 0 }, 'frame00')
-            // // .set([logo_NM_Minajesty_dsREF.current], { autoAlpha: 0 }, 'frame00')
+            // .set([LOGO_NM_MinajestyRef.current], { autoAlpha: 0 }, 'frame00')
+            // .set([logo_NM_Minajesty_baseREF.current], { autoAlpha: 0 }, 'frame00')
+            // .set([logo_NM_Minajesty_dsREF.current], { autoAlpha: 0 }, 'frame00')
 
-            // .set([bottleRef.current], { autoAlpha: 0.5 }, 'frame00')
+            .set([bottleRef.current], { autoAlpha: 0 }, 'frame00')
+            .set([ctaRef.current], { autoAlpha: 0 }, 'frame00')
 
             //#endregion -------------------- autoAlpha --------------------
 
@@ -121,52 +157,52 @@ export default function NMMN_11155() {
 
             // -------------------- SET TRANSFORM ORIGiNS --------------------
 
-            .set([LOGO_NM_Minajesty_sultryRef.current], { transformOrigin: '50% 0', immediateRender: true }, 'frame00')
+            .set([LOGO_NM_MinajestyRef.current], { transformOrigin: '50% 0', immediateRender: true }, 'frame00')
+            .set([bottleRef.current, LOGO_NM_Minajesty_sultryRef.current], { transformOrigin: '0 0', immediateRender: true }, 'frame00')
 
 
             // -------------------- FRAME01 --------------------
 
-            .set([LOGO_NM_MinajestyRef.current], { y: -40 }, 'frame00')
-            .set([bottleRef.current], { x: -90, y: 465 }, 'frame00')
-            .set([LOGO_NM_Minajesty_sultryRef.current], { x: 25, y: 400, scale: 1.3 }, 'frame01')
-            .set([ctaRef.current], { y: 395 }, 'frame00')
-
-            // .set([LOGO_NM_MinajestyRef.current], { x: 26, y: -44 }, 'frame00')
-            // .set([bottleRef.current], { x: 13, y: 464 }, 'frame00')
-            // .set([LOGO_NM_Minajesty_sultryRef.current], { x: 25, y: 403, scale: 1.3 }, 'frame01')
-            // .set([ctaRef.current], { y: 390 }, 'frame00')
+            .set([LOGO_NM_MinajestyRef.current], { x: -124, y: 36 }, 'frame00')
+            .set([bottleRef.current], { x: 12, y: 465 }, 'frame00')
+            .set([LOGO_NM_Minajesty_sultryRef.current], { x: -13, y: 403, scale: 1.3 }, 'frame01')
+            .set([ctaRef.current], { y: 550 }, 'frame00')
 
             //#endregion -------------------- SET TRANSFORMS --------------------
 
             //#endregion ==================== INITIALIZE OBJECTS ====================
 
 
-
             //#region ==================== FRAME 01 ====================
 
-            .fromTo([LOGO_NM_MinajestyRef.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: "rough({template: none.out, strength: 5, points: 50, taper: 'out', randomize: true, clamp: false})", duration: animDuration10 }, 'frame01 +=0')
+            .fromTo([LOGO_NM_MinajestyRef.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: "rough({template: none.out, strength: 5, points: 50, taper: 'out', randomize: true, clamp: false})", duration: animDuration05 }, 'frame01 +=0')
 
-            .fromTo([modelRef.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.out', duration: animDuration08 }, 'frame01 +=2')
+            .fromTo([modelRef.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.out', duration: animDuration04 }, 'frame01 +=2')
 
-            .fromTo([bottleRef.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.out', duration: animDuration04 }, 'frame01 +=2.5')
-            .fromTo([LOGO_NM_Minajesty_sultryRef.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.out', duration: animDuration04 }, 'frame01 +=2.5625')
+            .fromTo([bottleRef.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.out', duration: animDuration02 }, 'frame01 +=2.5')
+            .fromTo([LOGO_NM_Minajesty_sultryRef.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.out', duration: animDuration02 }, 'frame01 +=2.5625')
 
-            .fromTo([ctaRef.current], { y:370, autoAlpha: 0 }, { y: 395, autoAlpha: 1, ease: 'power3.out', duration: animDuration02 }, 'frame01 +=3.5')
+            .fromTo([ctaRef.current], { y:525, autoAlpha: 0 }, { y: 550, autoAlpha: 1, ease: 'power3.out', duration: animDuration01 }, 'frame01 +=3.5')
 
             //#endregion ==================== FRAME 01 ====================
         ;
 
-    }, [animDuration02, animDuration04, animDuration05, animDuration08, animDuration10]);
+        //tl.duration(1.5);
+        console.log('tl timing = ' + tl.duration() + ' secs');
+
+    }, [tl]);
+
+    //#endregion ==================== useEffect / useLayoutEffect ====================
 
 
     return (
         <div className='banner300x600 nmmn_11155'>
             {/* <h1>NMMN_11155 banner300x600 Component</h1> */}
 
-            <div className='bannerImg bg_300x600' ref={bgRef}><img src={bg} alt='bg' /></div>
-            <div className='bannerImg image_300x600' ref={modelRef}><img src={model} alt='model' /></div>
-            {/* <div className='bannerImg bottle_300x600' ref={bottleRef}><img src={bottle} alt='bottle' /></div> */}
-            <div className='bottle_300x600' ref={bottleRef}><img src={bottle} alt='bottle' /></div>
+            <div className='bgDiv' ref={bgRef}><img src={bg} alt='bg' /></div>
+            <div className='modelDiv' ref={modelRef}><img src={model} alt='model' /></div>
+            {/* <div className='bottleDiv' ref={bottleRef}><img src={bottle} alt='bottle' /></div> */}
+            <div className='bottleDiv' ref={bottleRef}><img src={bottle} alt='bottle' /></div>
 
 
         {/* #region -------------------- SVG FILTERS (logo_NM_Minajesty) -------------------- */}
@@ -251,6 +287,9 @@ export default function NMMN_11155() {
 
             <div className='cta' ref={ctaRef}><img src={cta} alt='cta_Walgreens' /></div>
             {/* <div className='vendorTag' ref={vendorLogoRef}><img src={vendorLogo} alt='vendorLogo_Walgreens' /></div> */}
+
+            {/* <div className='clickTag' id='clickTagID' ref={clickTagRef} onClick={() => handleClick()}></div> */}
+            <div className='clickTag' id='clickTagID' ref={clickTagRef} onClick={handleClick}></div>
         </div>
     );
 }

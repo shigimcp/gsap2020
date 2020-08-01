@@ -52,16 +52,26 @@ export default function BSPS_26897() {
     // const staggerDelay = 0.0625;
 
     // const animDuration00 = 0.125;
-    // const animDuration01 = 0.5;
-    const animDuration02 = 1;
-    const animDuration03 = 1.5;
-    const animDuration04 = 2;
-    const animDuration05 = 2.5;
-    const animDuration06 = 3;
-    // const animDuration07 = 3.5;
-    // const animDuration08 = 4;
-    // const animDuration09 = 4.5;
-    const animDuration10 = 5;
+    // const animDuration00_5 = 0.50;
+    const animDuration01 = 1.00;
+    const animDuration01_5 = 1.50;
+    const animDuration02 = 2.00;
+    const animDuration02_5 = 2.50;
+    const animDuration03 = 3.00;
+    // const animDuration03_5 = 3.50;
+    // const animDuration04 = 4.00;
+    // const animDuration04_5 = 4.50;
+    // const animDuration05 = 5.00;
+    // const animDuration05_5 = 5.50;
+    // const animDuration06 = 6.00;
+    // const animDuration06_5 = 6.50;
+    // const animDuration07 = 7.00;
+    // const animDuration07_5 = 7.50;
+    // const animDuration08 = 8.00;
+    // const animDuration08_5 = 8.50;
+    // const animDuration09 = 9.00;
+    // const animDuration09_5 = 9.50;
+    // const animDuration10 = 10.00;
 
     //#endregion ==================== ANIMATION DURATIONs ====================
 
@@ -89,105 +99,159 @@ export default function BSPS_26897() {
     const logoBSPS_spears_koRef = useRef(null);
     const logoBSPS_nueva_koRef = useRef(null);
 
+    const clickTagRef = useRef(null);
+
     //#endregion ==================== ASSETS Ref ====================
 
+
+    //#region ==================== FUNCTIONS ====================
+
+    //#region -------------------- FUNCTION: handleClick() --------------------
+
+    function handleClick() {
+
+        // console.log('');
+        // console.log('------------------------- handleClick() -------------------------');
+
+        tl.pause(0);
+        tl.restart();
+    }
+
+    //#endregion -------------------- FUNCTION: handleClick() --------------------
+
+    //#endregion ==================== FUNCTIONS ====================
+
+
+
+    //#region ==================== useEffect / useLayoutEffect ====================
+
+    const tl = gsap.timeline({ delay: 0 });
 
     // useEffect(() => {
     useLayoutEffect(() => {
 
-        // const tl = gsap.timeline({ delay: 0, paused: 'true' });
-        const tl = gsap.timeline({ delay: 0 });
+        // const tl = gsap.timeline({ delay: 0 });
 
         tl
 
             //#region ==================== INITIALIZE OBJECTS ====================
 
-            // -------------------- SET TRANSFORM ORIGiNS --------------------
+            //#region -------------------- autoAlpha --------------------
+
+            // .set([bgRef.current], { autoAlpha: 0 }, 'frame00')
+            // .set([modelRef.current], { autoAlpha: 0 }, 'frame00')
+            .set([bottleRef.current], { autoAlpha: 0 }, 'frame00')
+            // .set([vendorLogoRef.current], { autoAlpha: 0 }, 'frame00')
+
+            // .set([logoBSPSref.current], { autoAlpha: 0 }, 'frame00')
+
+            // .set([logoBSPS_baseref.current], { autoAlpha: 0 }, 'frame00')
+            // .set([logoBSPS_privateRef.current], { autoAlpha: 0 }, 'frame00')
+            // .set([logoBSPS_showRef.current], { autoAlpha: 0 }, 'frame00')
+            // .set([logoBSPS_britneyRef.current], { autoAlpha: 0 }, 'frame00')
+            // .set([logoBSPS_spearsRef.current], { autoAlpha: 0 }, 'frame00')
+            .set([logoBSPS_nuevaRef.current], { autoAlpha: 0 }, 'frame00')
+
+            // .set([logoBSPS_dsRef.current], { autoAlpha: 0 }, 'frame00')
+            // .set([logoBSPS_private_koRef.current], { autoAlpha: 0 }, 'frame00')
+            // .set([logoBSPS_show_koRef.current], { autoAlpha: 0 }, 'frame00')
+            // .set([logoBSPS_britney_koRef.current], { autoAlpha: 0 }, 'frame00')
+            // .set([logoBSPS_spears_koRef.current], { autoAlpha: 0 }, 'frame00')
+            // .set([logoBSPS_nueva_koRef.current], { autoAlpha: 0 }, 'frame00')
+
+            //#endregion -------------------- autoAlpha --------------------
+
+
+            //#region -------------------- SET TRANSFORMS --------------------
+
+            //#region -------------------- SET TRANSFORM ORIGiNS --------------------
 
             .set([logoBSPSref.current, logoBSPS_baseref.current, bottleRef.current], { transformOrigin: '50% 0', immediateRender: true }, 'frame00')
             .set([logoBSPS_dsRef.current], { transformOrigin: '50% 50%', immediateRender: true }, 'frame00')
             .set([logoBSPS_privateRef.current, logoBSPS_showRef.current, logoBSPS_britneyRef.current, logoBSPS_spearsRef.current, logoBSPS_nuevaRef.current], { transformOrigin: '50% 50%', immediateRender: true }, 'frame00')
 
+            //#endregion -------------------- SET TRANSFORM ORIGiNS --------------------
+
+
             // -------------------- FRAME01 --------------------
 
-            // .set([bgRef.current], { autoAlpha: 0 }, 'frame00')
-            // .set([modelRef.current], { x: -194, y: 6, scale: 1.05882352941176 }, 'frame00')
+            .set([bgRef.current], { autoAlpha: 0 }, 'frame00')
+            .set([modelRef.current], { x: -188, y: 6, scale: 1.05882352941176 }, 'frame00')
 
-            .set([logoBSPSref.current], { y: 85 }, 'frame00')
-            // .set([logoBSPSref.current], { x: 35, y: 85 }, 'frame00')
+            // .set([logoBSPSref.current], { x: -115, y: 85 }, 'frame00')
 
             // -------------------- FRAME02 --------------------
 
+            // .set([logoBSPSref.current], { y: -65, scale: 0.7875 }, 'frame00')
             // // .set([logoBSPS_dsRef.current], { autoAlpha: 0 }, 'frame00')
-            // .set([logoBSPSref.current], { x: 35, y: 20, scale: 0.7875 }, 'frame00')
 
-            // .set([bottleRef.current], { x: 70, y: -17.5 }, 'frame01')
-            // // .set([bottleRef.current], { x: 70, y: -17.5 }, 'frame01')
+            // .set([bottleRef.current], { x: 70, y: 84 }, 'frame01')
 
             // -------------------- FRAME03 --------------------
 
-            // .set([logoBSPSref.current], { x: 60, y: 35, scale: 0.7 }, 'frame00')
-            // .set([bottleRef.current], { x: 61, y: -4, scale: 0.9375 }, 'frame01')
-            // // .set([logoBSPSref.current], { x: 95, y: 35, scale: 0.7 }, 'frame00')
-            // // .set([bottleRef.current], { x: 126, y: -7, scale: 0.95 }, 'frame01')
+            // .set([logoBSPSref.current], { x: 60, y: -50, scale: 0.7 }, 'frame00')
+            // .set([bottleRef.current], { x: 60, y: 9, scale: 0.95 }, 'frame01')
 
             // .set([modelRef.current], { x: 0, y: 0, scale: 1}, 'frame00')
+
+            //#endregion -------------------- SET TRANSFORMS --------------------
 
             //#endregion ==================== INITIALIZE OBJECTS ====================
 
 
             //#region ==================== FRAME 01 ====================
 
-            .fromTo([bgRef.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power0.out', repeat: 1, yoyo: true, duration: animDuration03 }, 'frame01 +=0')
+            .fromTo([bgRef.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power0.out', repeat: 1, yoyo: true, duration: animDuration01_5 }, 'frame01 +=0')
 
-            .fromTo([logoBSPS_britneyRef.current], { scale: 0.75, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, ease: 'power3.out', duration: animDuration04 }, 'frame01 +=0')
-            .fromTo([logoBSPS_spearsRef.current], { scale: 0.75, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, ease: 'power3.out', duration: animDuration04 }, 'frame01 +=0.5')
-            .fromTo([logoBSPS_privateRef.current, logoBSPS_showRef.current], { scale: 0.75, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, ease: 'back.inOut(2)', duration: animDuration05 }, 'frame01 +=0')
+            .fromTo([logoBSPS_britneyRef.current], { scale: 0.75, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, ease: 'power3.out', duration: animDuration02 }, 'frame01 +=0')
+            .fromTo([logoBSPS_spearsRef.current], { scale: 0.75, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, ease: 'power3.out', duration: animDuration02 }, 'frame01 +=0.375')
+            .fromTo([logoBSPS_privateRef.current, logoBSPS_showRef.current], { scale: 0.75, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, ease: 'back.inOut(2)', duration: animDuration02_5 }, 'frame01 +=0')
 
-            .fromTo([logoBSPS_dsRef.current], { scale: 0.75, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, ease: 'back.inOut(2)', duration: animDuration05 }, 'frame01 +=0')
+            .fromTo([logoBSPS_dsRef.current], { scale: 0.75, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, ease: 'back.inOut(2)', duration: animDuration02_5 }, 'frame01 +=0')
 
-            .fromTo([logoBSPS_nuevaRef.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.out', duration: animDuration06 }, 'frame01 +=2')
+            .fromTo([logoBSPS_nuevaRef.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.out', duration: animDuration03 }, 'frame01 +=2')
 
             //#endregion ==================== FRAME 01 ====================
 
 
             //#region ==================== FRAME 02 ====================
 
-            .to([logoBSPSref.current], { y: 20, scale: 0.8, ease: 'power3.out', duration: animDuration02 }, 'frame02 -=1.5')
+            .to([logoBSPSref.current], { y: -65, scale: 0.8, ease: 'power3.out', duration: animDuration01 }, 'frame02 -=1.5')
 
-            .fromTo([bottleRef.current], { y: 5, autoAlpha: 0 }, { y: -15, autoAlpha: 1, ease: 'power3.out', duration: animDuration02 }, 'frame02 -=1.5')
-            // .fromTo([bottleRef.current], { x: 70, y: 5, autoAlpha: 0 }, { y: -15, autoAlpha: 1, ease: 'power3.out', duration: animDuration02 }, 'frame02 -=1.5')
+            .fromTo([bottleRef.current], { y: 20, autoAlpha: 0 }, { y: 0, autoAlpha: 1, ease: 'power3.out', duration: animDuration01 }, 'frame02 -=1.5')
 
             //#endregion ==================== FRAME 02 ====================
 
 
             //#region ==================== FRAME 03 ====================
 
-            .to([logoBSPSref.current], { x: 60, y: 35, scale: 0.7, ease: 'power2.out', duration: animDuration02 }, 'frame03 +=0.75')
-            .to([bottleRef.current], { x: 61, y: -4, scale: 0.9375, ease: 'power2.out', duration: animDuration02 }, 'frame03 +=0.75')
-            // .to([logoBSPSref.current], { x: 95, y: 35, scale: 0.7, ease: 'power2.out', duration: animDuration02 }, 'frame03 +=0.75')
-            // .to([bottleRef.current], { x: 126, y: -7, scale: 0.9375, ease: 'power2.out', duration: animDuration02 }, 'frame03 +=0.75')
+            .to([logoBSPSref.current], { x: 60, y: -50, scale: 0.7, ease: 'power2.out', duration: animDuration01 }, 'frame03 +=0.75')
+            .to([bottleRef.current], { x: 60, y: 9, scale: 0.9375, ease: 'power2.out', duration: animDuration01 }, 'frame03 +=0.75')
 
-            .fromTo([modelRef.current], { x: -194, y: 6, scale: 1.05882352941176, ease: 'power2.out' }, { x: 0, y: 0, scale: 1, ease: 'power2.out', duration: animDuration02 }, 'frame03 +=0.75')
+            .fromTo([modelRef.current], { x: -194, y: 6, scale: 1.05882352941176, ease: 'power2.out' }, { x: 0, y: 0, scale: 1, ease: 'power2.out', duration: animDuration01 }, 'frame03 +=0.75')
 
             // #endregion ==================== FRAME 03 ====================
         ;
 
-    // }, []);
-    }, [animDuration02, animDuration03, animDuration04, animDuration05, animDuration06, animDuration10]);
+        //tl.duration(1.5);
+        console.log('tl timing = ' + tl.duration() + ' secs');
+
+    }, [tl]);
+
+    //#endregion ==================== useEffect / useLayoutEffect ====================
 
 
     return (
         <div className='banner300x250 bsps_26897'>
             {/* <h1>BSPS_26897 300x250 Component</h1> */}
 
-            <div className='bannerImg image_300x250' ref={modelRef}><img src={model} alt='model' /></div>
-            <div className='bannerImg bg_300x250' ref={bgRef}><img src={bg} alt='bg' /></div>
+            <div className='imageDiv' ref={modelRef}><img src={model} alt='model' /></div>
+            <div className='bgDiv' ref={bgRef}><img src={bg} alt='bg' /></div>
 
 
         {/* #region -------------------- SVG: logo_NMTG_sp (bsps_dropshadows) -------------------- */}
 
-            <svg className='logoBSPS' ref={logoBSPSref} version='1.1' baseProfile='full' id='logo_ko_svg' width='230' height='92' space='preserve' overflow='visible'>
+            <svg className='logoBSPS' version='1.1' baseProfile='full' id='logo_svg' width='230' height='92' space='preserve' overflow='visible' ref={logoBSPSref}>
 
                 <defs>
                     <filter xmlns='http://www.w3.org/2000/svg' id='bsps_dropshadow01' x='-100%' y='-100%' width='300%' height='300%'>
@@ -229,8 +293,11 @@ export default function BSPS_26897() {
         {/* #endregion -------------------- SVG: logo_NMTG_sp (bsps_dropshadows) -------------------- */}
 
 
-            <div className='bannerImg bottle_300x250' ref={bottleRef}><img src={bottle} alt='bottle' /></div>
+            <div className='bottleDiv' ref={bottleRef}><img src={bottle} alt='bottle' /></div>
             <div className='vendorTag' ref={vendorLogoRef}><img src={vendorLogo} alt='vendorLogo_Walgreens' /></div>
+
+            {/* <div className='clickTag' id='clickTagID' ref={clickTagRef} onClick={() => handleClick()}></div> */}
+            <div className='clickTag' id='clickTagID' ref={clickTagRef} onClick={handleClick}></div>
         </div>
     );
 }

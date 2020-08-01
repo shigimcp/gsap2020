@@ -7,44 +7,50 @@
     // background-image: url(./images/Xframes/26903_NM_TRINI_GIRL_GWP_PR_Walgreens_300x250_retina_03b.jpg);
     background-size: contain;
 
-    // .bannerImg  {
-    //     // border: 2px inset #00ff00;
-    //     // border: 20px inset #00ff00;
-
-    //     // width: inherit;
-    //     // height: inherit;
-
-    //     opacity: 0.5;
-
-    //     // margin: 0;
-    //     // padding: 0;
-
-    //     // position: absolute;
-
-    //     // img {
-    //     //     margin: 0;
-    //     //     padding: 0;
-    //     // }
-    // }
-
-    .logo_NMTG_sp {
+    .bgDiv, 
+    .bg02_svg, 
+    .logo_bg, 
+    .logo_NMTG_sp, 
+    .copy01, 
+    .legal, 
+    .bottleDiv, 
+    .gwpDiv, 
+    .cta, 
+    .vendorTag
+    {
         // border: 2px solid #ff00ff;
-        // background-color: #ff0000;
 
-        // mix-blend-mode: multiply;
-        // mix-blend-mode: hard-light;
+        // mix-blend-mode: overlay;
+        // opacity: 0.5;
 
         margin: 0;
         padding: 0;
 
-        // position: relative;
+        position: absolute;
+    }
 
-        // g, .logo_NMTG_sp_ds, image {
-        //     border: 2px solid #0000ff;
+    .bg02_svg {
+        // border: 2px solid #ff00ff;
 
-        //     // color: #ffffff;
-        //     // fill: #ffffff;
-        // }
+        top: 0;
+        left: 0;
+    }
+
+    .logo_NMTG_sp {
+        // border: 2px solid #ff00ff;
+
+        top: 95px;
+        left: 37.5px;
+    }
+
+    .bottleDiv {
+        // border: 2px solid #ff00ff;
+
+        width: auto;
+        height: auto;
+
+        top: 95px;
+        left: 105px;
     }
 
     .logo_bg {
@@ -54,26 +60,40 @@
         width: 300px;
         height: 70px;
 
-        // position: absolute;
-        // top: 15px;
+        top: 15px;
     }
 
-    .bg02_svg {
+    .copy01, .legal {
         // border: 2px solid #ff00ff;
 
-        margin: 0;
-        padding: 0;
+        // width: 150px;
 
-        position: absolute;
-        top: 0;
-        left: 0;
+        transform-origin: 100% 0;
+        transform: scale(0.5);
+
+        top: 120px;
+        right: 12.5px;
     }
 
-    .nmmn_bottle {
+    .copy01 {
         // border: 2px solid #ff00ff;
 
-        width: auto;
-        height: auto;
+        top: 120px;
+        right: 12.5px;
+    }
+
+    .legal {
+        // border: 2px solid #ff00ff;
+
+        top: 150px;
+        right: 15px;
+    }
+
+    .gwpDiv {
+        // border: 2px solid #ff00ff;
+
+        top: 70px;
+        left: 5px;
     }
 
     .vendorTag {

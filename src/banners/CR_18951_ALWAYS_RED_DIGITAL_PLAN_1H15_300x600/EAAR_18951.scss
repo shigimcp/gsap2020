@@ -7,9 +7,22 @@
     background-image: url(./images/Xframes/CR_18951_ALWAYS_RED_DIGITAL_PLAN_1H15_300x600_retina_03.jpg);
     background-size: contain;
 
-    // * {
-    //     opacity: 0.5;
-    // }
+    .bgDiv, 
+    .modelDiv, 
+    .bottleDiv, 
+    // .logo_EAAR, 
+    .particleContainer 
+    {
+        // border: 2px solid #ff00ff;
+
+        // mix-blend-mode: overlay;
+        // opacity: 0.5;
+
+        margin: 0;
+        padding: 0;
+
+        position: absolute;
+    }
 
     .particleContainer {
         // border: 2px solid #00ff00;
@@ -35,17 +48,19 @@
         }
     }
 
-    .logoEAAR {
+    .logo_EAAR {
         // border: 2px solid #ff0000;
 
         width: 220px;
         // height: auto;
+        // height: 100px;
 
         margin: 0 auto;
         padding: 0;
 
+        position: relative;
 
-        .logoEAARbase {
+        .logo_EAARbase {
             // border: 2px solid #00ff00;
 
             width: inherit;
@@ -68,7 +83,7 @@
             }
         }
 
-        .logoEAARds {
+        .logo_EAARds {
             // border: 2px solid #ff00ff;
 
             width: 300px;
@@ -84,7 +99,8 @@
             img {
                 // border: 2px solid #00ffff;
 
-                mix-blend-mode: hard-light;
+                // mix-blend-mode: screen;
+                // mix-blend-mode: hard-light;
 
                 // margin: 0;
                 // padding: 0;
@@ -92,42 +108,48 @@
                 position: absolute;
                 top: 0;
                 left: 0;
+
+                // #logo_RED_ds_wID {
+                //     mix-blend-mode: screen;
+                // }
+
+                // #logo_RED_ds_rID {
+                //     mix-blend-mode: hard-light;
+                // }
             }
         }
     }
 
-    .bgEAAR {
+    .bgDiv {
         // border: 2px solid #ff0000;
 
-        // opacity: 0.5;
+        width: 100%;
+        // transform-origin: center;
 
-        width: inherit;
-        height: inherit;
-
-        position: absolute;
+        // top: 0;
+        // left: 0;
 
         img {
             // border: 2px solid #00ff00;
 
             width: inherit;
 
-            position: absolute;
-            top: 0;
-            left: 0;
+            // position: absolute;
+            // top: 0;
+            // left: 0;
         }
     }
 
-    .modelImg {
+    .modelDiv {
         // border: 2px solid #ff0000;
 
         width: 350px;
 
-        position: absolute;
         top: -50px;
         left: -25px;
     }
 
-    .bottleEAAR {
+    .bottleDiv {
         // border: 2px solid #ff0000;
 
         // opacity: 0.5;
@@ -136,7 +158,7 @@
         height: auto;
 
         margin: 0 auto;
-        padding: 0;
+        // padding: 0;
 
         position: relative;
         // overflow: hidden;
@@ -182,7 +204,7 @@
         .char01, .char02 {
             // border: 1px solid #ff00ff;
 
-            margin: -.0125em;
+            margin: 0 -.0025em;
             padding: 0;
 
             display: inline-block;
