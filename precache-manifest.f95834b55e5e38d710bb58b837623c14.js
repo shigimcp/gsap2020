@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6c70db0c131de9084a5bbf525c92f32a",
+    "revision": "8241b4cdbb08d4c2afc70093b995b53d",
     "url": "/gsap2020/index.html"
   },
   {
-    "revision": "02689b63d05dbb0add75",
-    "url": "/gsap2020/static/css/main.fbaa912d.chunk.css"
+    "revision": "095116cea559de3d9fd7",
+    "url": "/gsap2020/static/css/main.bab19316.chunk.css"
   },
   {
-    "revision": "886e3e9380f8c90a9eb7",
-    "url": "/gsap2020/static/js/2.7ea95f86.chunk.js"
+    "revision": "9eff7719df965ddd0a92",
+    "url": "/gsap2020/static/js/2.d8c8954c.chunk.js"
   },
   {
-    "revision": "e2c8bacda97a1bdeed199a16af6f23e3",
-    "url": "/gsap2020/static/js/2.7ea95f86.chunk.js.LICENSE.txt"
+    "revision": "af0dc2efe6a22bb763f8ef5e92b572cd",
+    "url": "/gsap2020/static/js/2.d8c8954c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "02689b63d05dbb0add75",
-    "url": "/gsap2020/static/js/main.c0df9c67.chunk.js"
+    "revision": "095116cea559de3d9fd7",
+    "url": "/gsap2020/static/js/main.fc7ecd79.chunk.js"
   },
   {
     "revision": "43678bf0cdad19af7b09",
@@ -168,6 +168,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/gsap2020/static/media/bg.3cb48ed9.jpg"
   },
   {
+    "revision": "6582c13607ce79e21588335a62c7dea3",
+    "url": "/gsap2020/static/media/bg.6582c136.jpg"
+  },
+  {
     "revision": "ab0bc347980b604961ab7c06dcc47f3d",
     "url": "/gsap2020/static/media/bg.ab0bc347.jpg"
   },
@@ -192,6 +196,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/gsap2020/static/media/bg_lt.9d696595.jpg"
   },
   {
+    "revision": "03c71fc5b65125e1e6bfeef77ff02c86",
+    "url": "/gsap2020/static/media/bottle.03c71fc5.png"
+  },
+  {
     "revision": "509af13b2adb80cc56061979887a89c3",
     "url": "/gsap2020/static/media/bottle.509af13b.png"
   },
@@ -206,6 +214,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "c331993434a1ba1ed62f5dbf701dfcfa",
     "url": "/gsap2020/static/media/bottle_lt.c3319934.png"
+  },
+  {
+    "revision": "876acf500aa6cd6ec1edc799ea3d3b11",
+    "url": "/gsap2020/static/media/btn_buy.876acf50.svg"
   },
   {
     "revision": "eaf2aa03c265c1c3f9c752f08676153c",
@@ -260,6 +272,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/gsap2020/static/media/image.e51a353a.jpg"
   },
   {
+    "revision": "111d938285a1f5532d473c8048de60ab",
+    "url": "/gsap2020/static/media/logo_PF.111d9382.png"
+  },
+  {
     "revision": "b76f2f8fc666f1390b3d6410df75076c",
     "url": "/gsap2020/static/media/logo_red_ds_k.b76f2f8f.png"
   },
@@ -278,5 +294,17 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "f5a185fe944067796d945d9e13fcb9f1",
     "url": "/gsap2020/static/media/logo_walgreens.f5a185fe.svg"
+  },
+  {
+    "revision": "a5751aba0b66917ead33477160e4f009",
+    "url": "/gsap2020/static/media/model.a5751aba.png"
+  },
+  {
+    "revision": "3779ed2a75a0e33589fa67ad0f06f9ba",
+    "url": "/gsap2020/static/media/skyline.3779ed2a.png"
+  },
+  {
+    "revision": "110bbd6697d1b5fbe4f9e968e6a144a5",
+    "url": "/gsap2020/static/media/starspin.110bbd66.svg"
   }
 ]);
