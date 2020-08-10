@@ -9,8 +9,8 @@ import { useCallback } from 'react';
 import { gsap } from 'gsap';
 // import * as PIXI from 'pixi.js';
 // import { PixiPlugin } from 'gsap/PixiPlugin';
-import { render, Text } from '@inlet/react-pixi'
-import { Application } from 'pixi.js'
+import { render, Text } from '@inlet/react-pixi';
+import { Application } from 'pixi.js';
 
 
 import '../banners.scss';
@@ -570,6 +570,7 @@ export default function NMPF_04852() {
 
             // .set([bg_Ref.current], { autoAlpha: 0 }, 'frame00')
             // .set([bg_ko_Ref.current], { autoAlpha: 0 }, 'frame00')
+            // .set([skyline_Ref.current], { autoAlpha: 0 }, 'frame00')
 
             // .set([model_Ref.current], { autoAlpha: 0 }, 'frame00')
             // .set([model_mask_Ref.current], { autoAlpha: 0 }, 'frame00')
@@ -764,7 +765,7 @@ export default function NMPF_04852() {
 
                 <g mask='url(#mask_modelID)'>
                     <image href={logo_PF} x='0' y='0' width='165' height='50' ref={logo_PF_Ref} />
-                    <image href={model} x='36.25' y='15' width='92.5' height='225' />
+                    <image href={model} x='32.25' y='15' width='92.5' height='225' />
                     <image href={logo_NM} x='0' y='0' width='165' height='50' ref={logo_NM_Ref} />
                 </g>
 
