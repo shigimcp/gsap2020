@@ -9,7 +9,7 @@ import { useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 
 import '../banners.scss';
-import './BCBG_02342.scss';
+import './BCBG_05500.scss';
 // import './fonts/fonts.css';
 
 
@@ -23,8 +23,7 @@ import model_rt from './images/model_rt.jpg';
 
 import bottle from './images/bottle.png';
 
-import logo_BCBG_MA from './images/logo_BCBG_MA.png';
-// import logo_BCBG_MA from './images/logo_BCBG_MA.svg';
+import logo_BCBG_BC from './images/logo_BCBG_BC.png';
 
 import cta from './images/cta.png';
 
@@ -58,7 +57,7 @@ export default function BCBG_02342() {
 
     const bottle_Ref = useRef(null);
 
-    const logo_BCBG_MA_Ref = useRef(null);
+    const logo_BCBG_BC_Ref = useRef(null);
 
     const maskSVG_Ref = useRef(null);
     const mask_Ref = useRef(null);
@@ -536,6 +535,7 @@ export default function BCBG_02342() {
     // const numParticle = 40;
 
     const tl = gsap.timeline({ delay: 0 });
+    // const tl = gsap.timeline({ delay: 0, paused: true });
     // const tl = gsap.timeline({ delay: 0, repeat: 2 });
 
 
@@ -560,7 +560,7 @@ export default function BCBG_02342() {
 
             .set([bottle_Ref.current], { autoAlpha: 0 }, 'frame00')
 
-            // .set([logo_BCBG_MA_Ref.current], { autoAlpha: 0 }, 'frame00')
+            // .set([logo_BCBG_BC_Ref.current], { autoAlpha: 0 }, 'frame00')
             .set([mask01_Ref.current, mask02_Ref.current], { x: -500 }, 'frame00')
 
             .set([cta_Ref.current], { autoAlpha: 0 }, 'frame00')
@@ -625,7 +625,7 @@ export default function BCBG_02342() {
 
 
     return (
-        <div className='banner300x250 bcbg_02342' id='bcbg_02342ID'>
+        <div className='banner300x250 bcbg_05500' id='bcbg_05500ID'>
             {/* <h1>BCBG_02342 300x250 Component</h1> */}
   
         {/* #region -------------------- SVG: Turbulence Filter - REF: https://redstapler.co/realistic-water-effect-svg-turbulence-filter/  &  https://tympanus.net/codrops/2019/02/19/svg-filter-effects-creating-texture-with-feturbulence/ -------------------- */}
@@ -677,8 +677,8 @@ export default function BCBG_02342() {
                     </linearGradient>
 
                     <mask id='maskID' ref={mask_Ref}>
-                        <rect className='maskClass' id='mask01ID' fill='url(#gradientID)' x='0' y='170' width='600' height='20' ref={mask01_Ref} />
-                        <rect className='maskClass' id='mask02ID' fill='url(#gradientID)' x='0' y='190' width='600' height='30' ref={mask02_Ref} />
+                        <rect className='maskClass' id='mask01ID' fill='url(#gradientID)' x='0' y='180' width='600' height='20' ref={mask01_Ref} />
+                        <rect className='maskClass' id='mask02ID' fill='url(#gradientID)' x='0' y='200' width='600' height='20' ref={mask02_Ref} />
                     </mask>
 
                 </defs>
@@ -689,7 +689,7 @@ export default function BCBG_02342() {
                 </g>
             */}
                 <g mask='url(#maskID)' ref={mask_Ref}>
-                    <image href={logo_BCBG_MA} x='15' y='180' width='270' height='38' ref={logo_BCBG_MA_Ref} />
+                    <image href={logo_BCBG_BC} x='15' y='180' width='270' height='38' ref={logo_BCBG_BC_Ref} />
                 </g>
 
             </svg>
@@ -697,7 +697,7 @@ export default function BCBG_02342() {
         {/* #endregion -------------------- SVG: mask(s) -------------------- */}
 
 
-            {/* <img src={logo_BCBG_MA} className='logo' id='logoID' alt='logo' ref={logo_BCBG_MA_Ref} /> */}
+            {/* <img src={logo_BCBG_BC} className='logo' id='logoID' alt='logo' ref={logo_BCBG_BC_Ref} /> */}
  
             {/* <img src={tag} className='tag' id='tagID' alt='bottle' ref={tag_Ref} /> */}
 
