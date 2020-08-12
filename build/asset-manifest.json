@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/gsap2020/static/css/main.aa16cffa.chunk.css",
-    "main.js": "/gsap2020/static/js/main.c42abbab.chunk.js",
-    "main.js.map": "/gsap2020/static/js/main.c42abbab.chunk.js.map",
+    "main.css": "/gsap2020/static/css/main.0ebb729a.chunk.css",
+    "main.js": "/gsap2020/static/js/main.924aa874.chunk.js",
+    "main.js.map": "/gsap2020/static/js/main.924aa874.chunk.js.map",
     "runtime-main.js": "/gsap2020/static/js/runtime-main.3d68c562.js",
     "runtime-main.js.map": "/gsap2020/static/js/runtime-main.3d68c562.js.map",
-    "static/js/2.a4ef3eb2.chunk.js": "/gsap2020/static/js/2.a4ef3eb2.chunk.js",
-    "static/js/2.a4ef3eb2.chunk.js.map": "/gsap2020/static/js/2.a4ef3eb2.chunk.js.map",
+    "static/js/2.104b4207.chunk.js": "/gsap2020/static/js/2.104b4207.chunk.js",
+    "static/js/2.104b4207.chunk.js.map": "/gsap2020/static/js/2.104b4207.chunk.js.map",
     "index.html": "/gsap2020/index.html",
-    "precache-manifest.97c008ba67c63517787447291e13fc91.js": "/gsap2020/precache-manifest.97c008ba67c63517787447291e13fc91.js",
+    "precache-manifest.1ed2b0db91b6484b05447d917de990fd.js": "/gsap2020/precache-manifest.1ed2b0db91b6484b05447d917de990fd.js",
     "service-worker.js": "/gsap2020/service-worker.js",
-    "static/css/main.aa16cffa.chunk.css.map": "/gsap2020/static/css/main.aa16cffa.chunk.css.map",
-    "static/js/2.a4ef3eb2.chunk.js.LICENSE.txt": "/gsap2020/static/js/2.a4ef3eb2.chunk.js.LICENSE.txt",
+    "static/css/main.0ebb729a.chunk.css.map": "/gsap2020/static/css/main.0ebb729a.chunk.css.map",
+    "static/js/2.104b4207.chunk.js.LICENSE.txt": "/gsap2020/static/js/2.104b4207.chunk.js.LICENSE.txt",
     "static/media/BSPS_bottle.png": "/gsap2020/static/media/BSPS_bottle.dab95377.png",
     "static/media/BSPS_image.jpg": "/gsap2020/static/media/BSPS_image.6bc465a8.jpg",
     "static/media/EAAR_18951.scss": "/gsap2020/static/media/CR_18951_ALWAYS_RED_DIGITAL_PLAN_1H15_300x600_retina_03.38205fee.jpg",
@@ -64,19 +64,23 @@
     "static/media/gwp.png": "/gsap2020/static/media/gwp.adf80631.png",
     "static/media/image.jpg": "/gsap2020/static/media/image.e51a353a.jpg",
     "static/media/logo.png": "/gsap2020/static/media/logo.2805be9d.png",
+    "static/media/logo_BCBG_MA.png": "/gsap2020/static/media/logo_BCBG_MA.b528be7e.png",
     "static/media/logo_PF.png": "/gsap2020/static/media/logo_PF.111d9382.png",
     "static/media/logo_red_ds_k.png": "/gsap2020/static/media/logo_red_ds_k.b76f2f8f.png",
     "static/media/logo_red_ds_r.png": "/gsap2020/static/media/logo_red_ds_r.50a5c1c1.png",
     "static/media/logo_red_ds_w.png": "/gsap2020/static/media/logo_red_ds_w.45ff7b3d.png",
     "static/media/logo_walgreens.svg": "/gsap2020/static/media/logo_walgreens.f5a185fe.svg",
     "static/media/model.png": "/gsap2020/static/media/model.a5751aba.png",
+    "static/media/model_ctr.jpg": "/gsap2020/static/media/model_ctr.431ca756.jpg",
+    "static/media/model_lf.jpg": "/gsap2020/static/media/model_lf.d2d3c48f.jpg",
+    "static/media/model_rt.jpg": "/gsap2020/static/media/model_rt.21174471.jpg",
     "static/media/skyline.png": "/gsap2020/static/media/skyline.3779ed2a.png",
     "static/media/starspin.svg": "/gsap2020/static/media/starspin.110bbd66.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.3d68c562.js",
-    "static/js/2.a4ef3eb2.chunk.js",
-    "static/css/main.aa16cffa.chunk.css",
-    "static/js/main.c42abbab.chunk.js"
+    "static/js/2.104b4207.chunk.js",
+    "static/css/main.0ebb729a.chunk.css",
+    "static/js/main.924aa874.chunk.js"
   ]
 }
