@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "da26d4c440accc4375ebaee5d0f45949",
+    "revision": "1f7a38a14760fe625b8fadf2aab76ba2",
     "url": "/gsap2020/index.html"
   },
   {
-    "revision": "8b851c9d1ebb7f60f138",
-    "url": "/gsap2020/static/css/main.9bb92dd9.chunk.css"
+    "revision": "58f5545275c974559741",
+    "url": "/gsap2020/static/css/main.0ebb729a.chunk.css"
   },
   {
-    "revision": "e4c3be42433a6cd38627",
-    "url": "/gsap2020/static/js/2.a4ef3eb2.chunk.js"
+    "revision": "380b055916c27c244ebb",
+    "url": "/gsap2020/static/js/2.104b4207.chunk.js"
   },
   {
     "revision": "af0dc2efe6a22bb763f8ef5e92b572cd",
-    "url": "/gsap2020/static/js/2.a4ef3eb2.chunk.js.LICENSE.txt"
+    "url": "/gsap2020/static/js/2.104b4207.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "8b851c9d1ebb7f60f138",
-    "url": "/gsap2020/static/js/main.c42abbab.chunk.js"
+    "revision": "58f5545275c974559741",
+    "url": "/gsap2020/static/js/main.924aa874.chunk.js"
   },
   {
     "revision": "43678bf0cdad19af7b09",
@@ -180,6 +180,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/gsap2020/static/media/bg.6582c136.jpg"
   },
   {
+    "revision": "90f4b8be4f41743f957316af64b6d96c",
+    "url": "/gsap2020/static/media/bg.90f4b8be.jpg"
+  },
+  {
     "revision": "ab0bc347980b604961ab7c06dcc47f3d",
     "url": "/gsap2020/static/media/bg.ab0bc347.jpg"
   },
@@ -218,6 +222,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "60aef07dcd48c71cb97061c8b38cc9ea",
     "url": "/gsap2020/static/media/bottle.60aef07d.png"
+  },
+  {
+    "revision": "88ef19401a8ceafc18ece3b601a3a95d",
+    "url": "/gsap2020/static/media/bottle.88ef1940.png"
   },
   {
     "revision": "95435ca0dd9df2e55af54da45ee0f104",
@@ -304,6 +312,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/gsap2020/static/media/logo.2805be9d.png"
   },
   {
+    "revision": "b528be7e6467af4a3a1f99e410683ebc",
+    "url": "/gsap2020/static/media/logo_BCBG_MA.b528be7e.png"
+  },
+  {
     "revision": "111d938285a1f5532d473c8048de60ab",
     "url": "/gsap2020/static/media/logo_PF.111d9382.png"
   },
@@ -330,6 +342,18 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "a5751aba0b66917ead33477160e4f009",
     "url": "/gsap2020/static/media/model.a5751aba.png"
+  },
+  {
+    "revision": "431ca7567d14e1ca036748892bc66c5a",
+    "url": "/gsap2020/static/media/model_ctr.431ca756.jpg"
+  },
+  {
+    "revision": "d2d3c48fbc7a48924fb9dba2b8f4423e",
+    "url": "/gsap2020/static/media/model_lf.d2d3c48f.jpg"
+  },
+  {
+    "revision": "21174471e2f2d8fa50de435e6c4ccc32",
+    "url": "/gsap2020/static/media/model_rt.21174471.jpg"
   },
   {
     "revision": "3779ed2a75a0e33589fa67ad0f06f9ba",
