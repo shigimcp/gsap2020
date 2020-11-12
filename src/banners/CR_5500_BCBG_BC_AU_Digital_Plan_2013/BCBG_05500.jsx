@@ -604,6 +604,7 @@ export default function BCBG_02342() {
 
             .fromTo([mask01_Ref.current], { x: -500 }, { x: 0, ease: 'power3.out', duration: animDuration05 }, 'frame01 +=0')
             .fromTo([mask02_Ref.current], { x: -500 }, { x: 0, ease: 'power3.out', duration: animDuration05 }, 'frame01 +=2')
+
             .fromTo([bottle_Ref.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.out', duration: animDuration02 }, 'frame01 +=4')
             .fromTo([cta_Ref.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.out', duration: animDuration02 }, 'frame01 +=4.25')
 
