@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/gsap2020/static/css/main.36708d01.chunk.css",
-    "main.js": "/gsap2020/static/js/main.774e52c0.chunk.js",
-    "main.js.map": "/gsap2020/static/js/main.774e52c0.chunk.js.map",
+    "main.css": "/gsap2020/static/css/main.28c7a790.chunk.css",
+    "main.js": "/gsap2020/static/js/main.081c4316.chunk.js",
+    "main.js.map": "/gsap2020/static/js/main.081c4316.chunk.js.map",
     "runtime-main.js": "/gsap2020/static/js/runtime-main.36c63c1b.js",
     "runtime-main.js.map": "/gsap2020/static/js/runtime-main.36c63c1b.js.map",
-    "static/js/2.bcfe6576.chunk.js": "/gsap2020/static/js/2.bcfe6576.chunk.js",
-    "static/js/2.bcfe6576.chunk.js.map": "/gsap2020/static/js/2.bcfe6576.chunk.js.map",
+    "static/js/2.0c6ef84a.chunk.js": "/gsap2020/static/js/2.0c6ef84a.chunk.js",
+    "static/js/2.0c6ef84a.chunk.js.map": "/gsap2020/static/js/2.0c6ef84a.chunk.js.map",
     "index.html": "/gsap2020/index.html",
-    "static/css/main.36708d01.chunk.css.map": "/gsap2020/static/css/main.36708d01.chunk.css.map",
-    "static/js/2.bcfe6576.chunk.js.LICENSE.txt": "/gsap2020/static/js/2.bcfe6576.chunk.js.LICENSE.txt",
+    "static/css/main.28c7a790.chunk.css.map": "/gsap2020/static/css/main.28c7a790.chunk.css.map",
+    "static/js/2.0c6ef84a.chunk.js.LICENSE.txt": "/gsap2020/static/js/2.0c6ef84a.chunk.js.LICENSE.txt",
     "static/media/BSPS_bottle.a95786b2.png": "/gsap2020/static/media/BSPS_bottle.a95786b2.png",
     "static/media/BSPS_image.03a1cd3f.jpg": "/gsap2020/static/media/BSPS_image.03a1cd3f.jpg",
     "static/media/EAAR_18951.scss": "/gsap2020/static/media/CR_18951_ALWAYS_RED_DIGITAL_PLAN_1H15_300x600_retina_03.f07844ff.jpg",
@@ -57,6 +57,7 @@
     "static/media/bottle.c62bd623.png": "/gsap2020/static/media/bottle.c62bd623.png",
     "static/media/bottle.e3ffb1a4.png": "/gsap2020/static/media/bottle.e3ffb1a4.png",
     "static/media/bottle.ec94315b.png": "/gsap2020/static/media/bottle.ec94315b.png",
+    "static/media/bottle.f1891e86.png": "/gsap2020/static/media/bottle.f1891e86.png",
     "static/media/bottle_lt.689326e6.png": "/gsap2020/static/media/bottle_lt.689326e6.png",
     "static/media/btn_buy.89a8a1fd.svg": "/gsap2020/static/media/btn_buy.89a8a1fd.svg",
     "static/media/btn_walmart.ce0ea3fc.svg": "/gsap2020/static/media/btn_walmart.ce0ea3fc.svg",
@@ -76,6 +77,8 @@
     "static/media/gwp.80b06b46.png": "/gsap2020/static/media/gwp.80b06b46.png",
     "static/media/image.5494dece.jpg": "/gsap2020/static/media/image.5494dece.jpg",
     "static/media/image.8e40518d.jpg": "/gsap2020/static/media/image.8e40518d.jpg",
+    "static/media/image.c4d6d0d4.jpg": "/gsap2020/static/media/image.c4d6d0d4.jpg",
+    "static/media/logo.3a3b537d.png": "/gsap2020/static/media/logo.3a3b537d.png",
     "static/media/logo.3ebabe82.png": "/gsap2020/static/media/logo.3ebabe82.png",
     "static/media/logo_BCBG_BC.dad32ad7.png": "/gsap2020/static/media/logo_BCBG_BC.dad32ad7.png",
     "static/media/logo_BCBG_MA.44f42d48.png": "/gsap2020/static/media/logo_BCBG_MA.44f42d48.png",
@@ -95,8 +98,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.36c63c1b.js",
-    "static/js/2.bcfe6576.chunk.js",
-    "static/css/main.36708d01.chunk.css",
-    "static/js/main.774e52c0.chunk.js"
+    "static/js/2.0c6ef84a.chunk.js",
+    "static/css/main.28c7a790.chunk.css",
+    "static/js/main.081c4316.chunk.js"
   ]
 }
