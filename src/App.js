@@ -19,6 +19,8 @@ import NMTG_26903 from './banners/26903_NM_TRINI_GIRL_GWP_PR_Walgreens_300x250/N
 import JCVR_26963 from './banners/26963_JC_VIVA_ROSE_GWP_PR_Walgreens_300x250/JCVR_26963';
 import BCBG_02342 from './banners/BCBG_MAXAZRIA_CR00002342_AU_Digital_Plan/BCBG_02342';
 import BCBG_05500 from './banners/CR_5500_BCBG_BC_AU_Digital_Plan_2013/BCBG_05500';
+import JBJA_10263 from './banners/CR_10263_J_by_JENNIFER_ANISTON_Kohls_300x250/JBJA_10263';
+// import JBJA_10263 from './banners/CR_10263_J_by_JENNIFER_ANISTON_Kohls_300x250/JBJA_10263_simplified';
 
 function App() {
 
@@ -34,6 +36,7 @@ function App() {
         JCVR_26963: JCVR_26963,
         BCBG_02342: BCBG_02342,
         BCBG_05500: BCBG_05500,
+        JBJA_10263: JBJA_10263,
     };
 
     const bannerList = [
@@ -45,7 +48,8 @@ function App() {
         'NMTG_26903',
         'JCVR_26963',
         'BCBG_02342',
-        'BCBG_05500'
+        'BCBG_05500',
+        'JBJA_10263',
     ]
 
     //#endregion -------------------- AVAILABLE GSAP BANNERS --------------------
@@ -65,10 +69,10 @@ function App() {
 
     // const [bannerShow, setBannerShow] = useState();
 
-    // const [bannerShow, setBannerShow] = useState(EAAR_18951);
     // const [bannerShow, setBannerShow] = useState(<EAAR_18951 />);
     // const [bannerShow, setBannerShow] = useState(<NMPF_04852 />);
-    const [bannerShow, setBannerShow] = useState(<NMMN_11155 />);
+    // const [bannerShow, setBannerShow] = useState(<NMMN_11155 />);
+    const [bannerShow, setBannerShow] = useState(<JBJA_10263 />);
 
     //#endregion ==================== useState ====================
 

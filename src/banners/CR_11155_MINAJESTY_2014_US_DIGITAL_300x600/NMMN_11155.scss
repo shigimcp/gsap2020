@@ -34,32 +34,41 @@
         left: 12px;
     }
 
-    .logoContainer {
-        // border: 2px solid #ff00ff;
+    // .logoContainer {
+    //     // border: 2px solid #ff00ff;
+
+    //     mix-blend-mode: overlay;
+
+    //     top: 37px;
+    //     left: 26px;
+
+    //     .logo_NM_Minajesty {
+    //         // border: 2px solid #ff00ff;
+
+    //         // top: 37px;
+    //         // left: 26px;
+
+    //         z-index: 999;
+
+    //         // .logo_NM_Minajesty_sultry {
+    //         //     border: 2px solid #ff00ff;
+
+    //         //     // width: 100%;
+    //         //     // top: 520px;
+    //         //     margin-top: 400px;
+    //         // }
+    //     }
+
+    //     // z-index: 999;
+    // }
+
+    .LogoNMMinajesty {
 
         mix-blend-mode: overlay;
+        // mix-blend-mode: screen;
 
-        top: 37px;
-        left: 26px;
-
-        .logo_NM_Minajesty {
-            // border: 2px solid #ff00ff;
-
-            // top: 37px;
-            // left: 26px;
-
-            z-index: 999;
-
-            // .logo_NM_Minajesty_sultry {
-            //     border: 2px solid #ff00ff;
-
-            //     // width: 100%;
-            //     // top: 520px;
-            //     margin-top: 400px;
-            // }
-        }
-
-        z-index: 999;
+        // top: 37px;
+        // left: 26px;
     }
 
     .cta {
@@ -82,5 +91,15 @@
 
         mix-blend-mode: screen;
         // z-index: 999;
+    }
+
+    .clickTag {
+        // border: 1px solid #ee70bc !important;
+
+        // width: calc(100% - 1.75px);
+        // height: calc(100% - 1.5px);
+
+        position: absolute;
+        top: 0;
     }
 }
