@@ -13,13 +13,13 @@
 		"end": "#ffffff"
 	},
 	"speed": {
-		"start": 50,
+		"start": 25,
 		"end": 0,
 		"minimumSpeedMultiplier": 5
 	},
 	"acceleration": {
-		"x": 200,
-		"y": -150
+		"x": 0,
+		"y": 0
 	},
 	"maxSpeed": 0,
 	"startRotation": {
@@ -36,18 +36,19 @@
 		"max": 5
 	},
 	"blendMode": "normal",
-	"frequency": 0.01,
-	"emitterLifetime": -1,
+	"frequency": 0.0125,
+	"emitterLifetime": 2,
 	"maxParticles": 250,
 	"pos": {
-		"x": 0,
-		"y": 0
+		"x": 150,
+		"y": 125
 	},
 	"addAtBack": true,
-	"spawnType": "circle",
+	"spawnType": "ring",
 	"spawnCircle": {
 		"x": 0,
 		"y": 0,
-		"r": 0
+		"r": 50,
+		"minR": 0
 	}
 }

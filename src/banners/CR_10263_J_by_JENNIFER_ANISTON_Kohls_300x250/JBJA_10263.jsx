@@ -102,22 +102,43 @@ export default function JBJA_10263() {
 
     //#region ==================== FUNCTIONS ====================
 
-    //#region -------------------- FUNCTION: removeAllChildNodes(parent) --------------------
+    //#region -------------------- FUNCTION: removeAllChildNodes(thisContainer) --------------------
 
-    // const removeAllChildNodes = useCallback((parent) => {
-    function removeAllChildNodes(parent) {
+    // const removeAllChildNodes = useCallback((thisContainer) => {
+    function removeAllChildNodes(thisContainer) {
+
+        console.log('');
+        console.log('------------------------- removeAllChildNodes(thisContainer) triggered! -------------------------');
+
+        // // console.log('');
+        // console.log('thisContainer.id = ' + thisContainer.id);
+        // console.log('thisContainer = ' + thisContainer);
+        // console.log(thisContainer);
 
         // console.log('');
-        // console.log('------------------------- removeAllChildNodes(parent) triggered! -------------------------');
+        // console.log('thisContainer.children = ' + thisContainer.children);
+        // console.log(thisContainer.children);
 
-        // console.log('parent = ' + parent);
-        // console.log('parent.id = ' + parent.id);
+        // console.log('');
+        // console.log('thisContainer.firstChild = ' + thisContainer.firstChild);
+        // console.log(thisContainer.firstChild);
 
-        while (parent.firstChild) {
-            parent.removeChild(parent.firstChild);
+        // console.log('');
+        // console.log('thisContainer.firstChild.children = ' + thisContainer.firstChild.children);
+        // console.log(thisContainer.firstChild.children);
+
+        // thisContainer.emit = true;
+
+        while (thisContainer.firstChild) {
+            thisContainer.removeChild(thisContainer.firstChild);
         }
+
+        // console.log('');
+        // console.log('thisContainer.firstChild = ' + thisContainer.firstChild);
+        // console.log(thisContainer.firstChild);
+
+    // }, []);
     }
-    // // }, []);
 
     //#endregion -------------------- FUNCTION: removeAllChildNodes(thisContainer) --------------------
 
@@ -130,7 +151,7 @@ export default function JBJA_10263() {
         // console.log('');
         // console.log('------------------------- handleClick() -------------------------');
 
-        removeAllChildNodes(particleContainer_Ref.current);
+        // removeAllChildNodes(particleContainer_Ref.current);
 
         tl.pause(0);
         tl.restart();
@@ -181,13 +202,13 @@ export default function JBJA_10263() {
 
 
 
-        //#region -------------------- PARTICLES: container --------------------
+        //#region -------------------- PARTICLES: container (ParticleContainer) --------------------
 
         let container = new PIXI.ParticleContainer();
 
         app.stage.addChild(container);
 
-        //#endregion -------------------- PARTICLES: container --------------------
+        //#endregion -------------------- PARTICLES: container (ParticleContainer) --------------------
 
 
 
@@ -223,13 +244,13 @@ export default function JBJA_10263() {
                     "end": "#ffffff"
                 },
                 "speed": {
-                    "start": 50,
+                    "start": 25,
                     "end": 0,
                     "minimumSpeedMultiplier": 5
                 },
                 "acceleration": {
-                    "x": 200,
-                    "y": -150
+                    "x": 0,
+                    "y": 0
                 },
                 "maxSpeed": 0,
                 "startRotation": {
@@ -246,20 +267,23 @@ export default function JBJA_10263() {
                     "max": 5
                 },
                 "blendMode": "normal",
-                "frequency": 0.01,
-                "emitterLifetime": -1,
+                "frequency": 0.0125,
+                "emitterLifetime": 2,
                 "maxParticles": 250,
                 "pos": {
                     "x": 150,
                     "y": 125
+                    // "x": 0,
+                    // "y": 0
                 },
                 "addAtBack": true,
-                "spawnType": "circle",
+                "spawnType": "ring",
                 "spawnCircle": {
                     "x": 0,
                     "y": 0,
-                    "r": 0
-                }
+                    "r": 50,
+                    "minR": 0
+                },
             }
 
             //#endregion -------------------- EMITTER CONFIG: Canvas - REF: https://pixijs.io/pixi-particles-editor/ --------------------
@@ -269,6 +293,8 @@ export default function JBJA_10263() {
 
 
 
+        //#region -------------------- PARTICLES: update - REF: https://github.com/pixijs/pixi-particles --------------------
+
         // Calculate the current time
         let elapsed = Date.now();
 
@@ -276,26 +302,19 @@ export default function JBJA_10263() {
         // Update function every frame
         let update = function () {
 
+            console.log('-------------------- update --------------------');
+
             // Update the next frame
             requestAnimationFrame(update);
 
             let now = Date.now();
 
             // The emitter requires the elapsed number of seconds since the last update
-            if (emitter) {
-                // console.log('There IS an emitter... RIGHT?!?!?!');
-
-                emitter.update((now - elapsed) * 0.001);
-                elapsed = now;
-
-                // console.log('elapsed = ' + elapsed);
-
-            } else {
-                console.log('WHERE is my emitter?!?!?!');
-            }
+            emitter.update((now - elapsed) * 0.001);
+            elapsed = now;
 
             // Should re-render the PIXI Stage
-            app.renderer.render(app.stage);
+            // app.renderer.render(app.stage);
         };
 
 
@@ -304,6 +323,8 @@ export default function JBJA_10263() {
 
         // Start the update
         update();
+
+        //#endregion -------------------- PARTICLES: update - REF: https://github.com/pixijs/pixi-particles --------------------
 
     }, []);
 
@@ -366,7 +387,8 @@ export default function JBJA_10263() {
 
             .to([copy01_Ref.current], { autoAlpha: 0, ease: 'power3.out', duration: animDuration01_5 }, 'frame02 +=1.5')
 
-            .fromTo([copy02_Ref.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.out', duration: animDuration01_5 }, 'frame02 +=2')
+            // .fromTo([copy02_Ref.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.out', duration: animDuration01_5 }, 'frame02 +=2')
+            .fromTo([copy02_Ref.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.out', duration: animDuration01_5, onComplete: removeAllChildNodes, onCompleteParams: [particleContainer_Ref.current] }, 'frame02 +=2')
 
             //#endregion ==================== FRAME 02 ====================
 
