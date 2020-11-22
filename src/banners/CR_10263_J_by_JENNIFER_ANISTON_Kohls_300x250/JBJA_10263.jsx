@@ -60,6 +60,7 @@ export default function JBJA_10263() {
 
     const copy01_Ref = useRef(null);
     const copy02_Ref = useRef(null);
+    const copy02wave_Ref = useRef(null);
 
     const particleContainer_Ref = useRef(null);
     const clickTag_Ref = useRef(null);
@@ -295,34 +296,41 @@ export default function JBJA_10263() {
 
         //#region -------------------- PARTICLES: update - REF: https://github.com/pixijs/pixi-particles --------------------
 
-        // Calculate the current time
-        let elapsed = Date.now();
+        // // Calculate the current time
+        // let elapsed = Date.now();
 
 
-        // Update function every frame
-        let update = function () {
+        // // Update function every frame
+        // let update = function () {
 
-            console.log('-------------------- update --------------------');
+        //     console.log('-------------------- update --------------------');
 
-            // Update the next frame
-            requestAnimationFrame(update);
+        //     // Update the next frame
+        //     requestAnimationFrame(update);
 
-            let now = Date.now();
+        //     let now = Date.now();
 
-            // The emitter requires the elapsed number of seconds since the last update
-            emitter.update((now - elapsed) * 0.001);
-            elapsed = now;
+        //     // The emitter requires the elapsed number of seconds since the last update
+        //     emitter.update((now - elapsed) * 0.001);
+        //     elapsed = now;
 
-            // Should re-render the PIXI Stage
-            // app.renderer.render(app.stage);
-        };
+        //     // Should re-render the PIXI Stage
+        //     // app.renderer.render(app.stage);
+        // };
 
 
-        // Start emitting
-        emitter.emit = true;
+        // // Start emitting
+        // emitter.emit = true;
 
-        // Start the update
-        update();
+        // // Start the update
+        // update();
+
+
+        // -------------------- REF: https://github.com/pixijs/pixi-particles/issues/139 --------------------
+
+        emitter.playOnceAndDestroy(() => {
+            removeAllChildNodes(particleContainer_Ref.current);
+        })
 
         //#endregion -------------------- PARTICLES: update - REF: https://github.com/pixijs/pixi-particles --------------------
 
@@ -354,6 +362,7 @@ export default function JBJA_10263() {
 
             // .set([copy01_Ref.current], { autoAlpha: 0 }, 'frame00')
             // .set([copy02_Ref.current], { autoAlpha: 0 }, 'frame00')
+            .set([copy02wave_Ref.current], { autoAlpha: 0 }, 'frame00')
 
             // .set([logo_Ref.current], { autoAlpha: 0 }, 'frame00')
             // .set([bottle_Ref.current], { autoAlpha: 0 }, 'frame00')
@@ -387,8 +396,8 @@ export default function JBJA_10263() {
 
             .to([copy01_Ref.current], { autoAlpha: 0, ease: 'power3.out', duration: animDuration01_5 }, 'frame02 +=1.5')
 
-            // .fromTo([copy02_Ref.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.out', duration: animDuration01_5 }, 'frame02 +=2')
-            .fromTo([copy02_Ref.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.out', duration: animDuration01_5, onComplete: removeAllChildNodes, onCompleteParams: [particleContainer_Ref.current] }, 'frame02 +=2')
+            .fromTo([copy02_Ref.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.out', duration: animDuration01_5 }, 'frame02 +=2')
+            // .fromTo([copy02_Ref.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.out', duration: animDuration01_5, onComplete: removeAllChildNodes, onCompleteParams: [particleContainer_Ref.current] }, 'frame02 +=2')
 
             //#endregion ==================== FRAME 02 ====================
 
@@ -429,6 +438,7 @@ export default function JBJA_10263() {
 
             <img className='copy' id='copy01ID' src={copy01} alt='copy01' ref={copy01_Ref} />
             <img className='copy' id='copy02ID' src={copy02} alt='copy02' ref={copy02_Ref} />
+            <img className='copy' id='copy02waveID' src={copy02} alt='copy02wave' ref={copy02wave_Ref} />
 
             <img className='logo' id='logoID' src={logo} alt='logo' ref={logo_Ref} />
 
