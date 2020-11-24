@@ -1,5 +1,6 @@
 .jbja_10263 {
     // border: 1px inset #ee70bc;
+    border: 4px solid #000000 !important;
 
     // // width: calc(100% - 1.75px);
     // // height: calc(100% - 1.5px);
@@ -24,7 +25,7 @@
     .copy, 
     .logo, 
     .cta, 
-    .particleContainer 
+    .pixiContainer 
     {
         // border: 2px solid #ff00ff;
 
@@ -36,6 +37,14 @@
 
         position: absolute;
     }
+
+    canvas {
+        // border: 2px solid #ff0000;
+
+        position: absolute;
+        transform: translate(-50%, 0);
+    }
+
 
     .copy {
         // border: 2px solid #ff0000;
@@ -189,7 +198,7 @@
         }
     }
 
-    .particleContainer {
+    .pixiContainer {
         // border: 2px solid #00ff00;
 
         color: #ffffff;
@@ -245,7 +254,7 @@
     }
 
     .clickTag {
-        border: 4px solid #000000 !important;
+        // border: 4px solid #000000 !important;
 
         width: calc(100% - 8px);
         height: calc(100% - 8px);

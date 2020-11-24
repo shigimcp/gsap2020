@@ -30,6 +30,10 @@ import logo from './images/logo.png';
 // import particle from './images/sparkle360.png';
 import particle from './images/particle.png';
 
+// import displMap from './images/displacementMap.png';
+// import displMap from './images/displacementMap2.png';
+import displMap from './images/displacementMap3.png';
+
 //#endregion -------------------- IMPORTS: ASSETS --------------------
 
 
@@ -60,9 +64,11 @@ export default function JBJA_10263() {
 
     const copy01_Ref = useRef(null);
     const copy02_Ref = useRef(null);
-    const copy02wave_Ref = useRef(null);
+    // const copy02wave_Ref = useRef(null);
 
-    const particleContainer_Ref = useRef(null);
+    const pixiContainer_Ref = useRef(null);
+    // const waveContainer_Ref = useRef(null);
+
     const clickTag_Ref = useRef(null);
 
     //#endregion ==================== ASSETS _Ref ====================
@@ -73,7 +79,7 @@ export default function JBJA_10263() {
     // const staggerDuration = 0.125;
     // const staggerDelay = 0.0375;
 
-    // const animDuration00 = 0.125;
+    const animDuration00 = 0.125;
     // const animDuration00_5 = 0.50;
     const animDuration00_75 = 0.75;
     // const animDuration01 = 1.00;
@@ -103,104 +109,62 @@ export default function JBJA_10263() {
 
     //#region ==================== FUNCTIONS ====================
 
-    //#region -------------------- FUNCTION: removeAllChildNodes(thisContainer) --------------------
+    //#region -------------------- FUNCTION: removeAllChildNodes(parent) --------------------
 
-    // const removeAllChildNodes = useCallback((thisContainer) => {
-    function removeAllChildNodes(thisContainer) {
-
-        console.log('');
-        console.log('------------------------- removeAllChildNodes(thisContainer) triggered! -------------------------');
-
-        // // console.log('');
-        // console.log('thisContainer.id = ' + thisContainer.id);
-        // console.log('thisContainer = ' + thisContainer);
-        // console.log(thisContainer);
+    function removeAllChildNodes(parent) {
 
         // console.log('');
-        // console.log('thisContainer.children = ' + thisContainer.children);
-        // console.log(thisContainer.children);
+        // console.log('------------------------- removeAllChildNodes(parent) triggered! -------------------------');
 
-        // console.log('');
-        // console.log('thisContainer.firstChild = ' + thisContainer.firstChild);
-        // console.log(thisContainer.firstChild);
+        // console.log('parent = ' + parent);
+        // console.log('parent.id = ' + parent.id);
 
-        // console.log('');
-        // console.log('thisContainer.firstChild.children = ' + thisContainer.firstChild.children);
-        // console.log(thisContainer.firstChild.children);
-
-        // thisContainer.emit = true;
-
-        while (thisContainer.firstChild) {
-            thisContainer.removeChild(thisContainer.firstChild);
+        while (parent.firstChild) {
+            parent.removeChild(parent.firstChild);
         }
-
-        // console.log('');
-        // console.log('thisContainer.firstChild = ' + thisContainer.firstChild);
-        // console.log(thisContainer.firstChild);
-
-    // }, []);
     }
 
     //#endregion -------------------- FUNCTION: removeAllChildNodes(thisContainer) --------------------
 
 
-    //#region -------------------- FUNCTION: handleClick() - GSAP timeline control --------------------
 
-    function handleClick() {
-    // const handleClick = useCallback(() => {
+    //#region -------------------- FUNCTION: addPixi = useCallback((thisContainer) --------------------
 
-        // console.log('');
-        // console.log('------------------------- handleClick() -------------------------');
+    const app = new PIXI.Application({
+        width: 300,
+        height: 250,
+        backgroundColor: 0x000000,
+        view: document.getElementById('pixiContainer'),
 
-        // removeAllChildNodes(particleContainer_Ref.current);
+        autoResize: true,
+        resolution: devicePixelRatio || 1,
+        antialias: true,
+        // transparent: true,
+    })
 
-        tl.pause(0);
-        tl.restart();
+    const addPixi = useCallback((thisContainer) => {
 
-        addPixi(particleContainer_Ref.current, numParticle);
-    }
-    // }, [tl]);
+        thisContainer.appendChild(app.view);
 
-    //#endregion -------------------- FUNCTION: handleClick() - GSAP timeline control --------------------
+    }, [app.view]);
+
+    //#endregion -------------------- FUNCTION: addPixi = useCallback((thisContainer) --------------------
 
 
-    //#region -------------------- FUNCTION: addPixi = useCallback(() --------------------
-
+    //#region -------------------- FUNCTION: pixiParticle = useCallback((thisContainer) --------------------
     //       -------------------- REF: https://pixijs.download/dev/docs/PIXI.ParticleContainer.html --------------------
     //       -------------------- REF: https://github.com/pixijs/pixi-particles/blob/master/docs/examples/js/ParticleExample.js --------------------
     //       -------------------- REF: https://pixijs.io/pixi-particles-editor/ --------------------
 
-    const addPixi = useCallback((thisContainer, numParticle) => {
+    const pixiParticle = useCallback((thisContainer) => {
 
-        console.log('');
-        console.log('------------------------- addPixi(thisContainer, numParticle) triggered! -------------------------');
+        // console.log('');
+        // console.log('------------------------- pixiParticle(thisContainer) triggered! -------------------------');
 
-        console.log('thisContainer.id = ' + thisContainer.id + '     numParticle = ' + numParticle);
-        console.log(thisContainer);
+        // console.log('thisContainer.id = ' + thisContainer.id);
+        // console.log(thisContainer);
 
-
-
-        //#region -------------------- PARTICLES: app --------------------
-
-        const app = new PIXI.Application({
-            width: 300,
-            height: 250,
-            // backgroundColor: 0xd4efff,
-            backgroundColor: 0x000000,
-            // view: thisContainer,
-            // view: document.getElementById(thisContainer.id),
-            view: document.getElementById('particleContainer'),
-
-            autoResize: true,
-            resolution: devicePixelRatio || 1,
-            antialias: true,
-            // transparent: true,
-        })
-
-        thisContainer.appendChild(app.view);
-
-        //#endregion -------------------- PARTICLES: app --------------------
-
+        // console.log(pixiContainer_Ref.current);
 
 
         //#region -------------------- PARTICLES: container (ParticleContainer) --------------------
@@ -210,7 +174,6 @@ export default function JBJA_10263() {
         app.stage.addChild(container);
 
         //#endregion -------------------- PARTICLES: container (ParticleContainer) --------------------
-
 
 
         //#region -------------------- PARTICLES: emitter --------------------
@@ -231,59 +194,59 @@ export default function JBJA_10263() {
             // Emitter configuration: edit this to change the look of the emitter
 
             {
-                "alpha": {
-                    "start": 0.6,
-                    "end": 0
+                'alpha': {
+                    'start': 0.6,
+                    'end': 0
                 },
-                "scale": {
-                    "start": 0.05,
-                    "end": 0.75,
-                    "minimumScaleMultiplier": 1
+                'scale': {
+                    'start': 0.05,
+                    'end': 0.75,
+                    'minimumScaleMultiplier': 1
                 },
-                "color": {
-                    "start": "#e4f9ff",
-                    "end": "#ffffff"
+                'color': {
+                    'start': '#e4f9ff',
+                    'end': '#ffffff'
                 },
-                "speed": {
-                    "start": 25,
-                    "end": 0,
-                    "minimumSpeedMultiplier": 5
+                'speed': {
+                    'start': 25,
+                    'end': 0,
+                    'minimumSpeedMultiplier': 5
                 },
-                "acceleration": {
-                    "x": 0,
-                    "y": 0
+                'acceleration': {
+                    'x': 0,
+                    'y': 0
                 },
-                "maxSpeed": 0,
-                "startRotation": {
-                    "min": 0,
-                    "max": 360
+                'maxSpeed': 0,
+                'startRotation': {
+                    'min': 0,
+                    'max': 360
                 },
-                "noRotation": false,
-                "rotationSpeed": {
-                    "min": 0,
-                    "max": 0
+                'noRotation': false,
+                'rotationSpeed': {
+                    'min': 0,
+                    'max': 0
                 },
-                "lifetime": {
-                    "min": 1,
-                    "max": 5
+                'lifetime': {
+                    'min': 1,
+                    'max': 5
                 },
-                "blendMode": "normal",
-                "frequency": 0.0125,
-                "emitterLifetime": 2,
-                "maxParticles": 250,
-                "pos": {
-                    "x": 150,
-                    "y": 125
-                    // "x": 0,
-                    // "y": 0
+                'blendMode': 'normal',
+                'frequency': 0.0125,
+                'emitterLifetime': 2,
+                'maxParticles': 250,
+                'pos': {
+                    'x': 150,
+                    'y': 125
+                    // 'x': 0,
+                    // 'y': 0
                 },
-                "addAtBack": true,
-                "spawnType": "ring",
-                "spawnCircle": {
-                    "x": 0,
-                    "y": 0,
-                    "r": 50,
-                    "minR": 0
+                'addAtBack': true,
+                'spawnType': 'ring',
+                'spawnCircle': {
+                    'x': 0,
+                    'y': 0,
+                    'r': 50,
+                    'minR': 0
                 },
             }
 
@@ -293,50 +256,95 @@ export default function JBJA_10263() {
         //#endregion -------------------- PARTICLES: emitter --------------------
 
 
-
-        //#region -------------------- PARTICLES: update - REF: https://github.com/pixijs/pixi-particles --------------------
-
-        // // Calculate the current time
-        // let elapsed = Date.now();
-
-
-        // // Update function every frame
-        // let update = function () {
-
-        //     console.log('-------------------- update --------------------');
-
-        //     // Update the next frame
-        //     requestAnimationFrame(update);
-
-        //     let now = Date.now();
-
-        //     // The emitter requires the elapsed number of seconds since the last update
-        //     emitter.update((now - elapsed) * 0.001);
-        //     elapsed = now;
-
-        //     // Should re-render the PIXI Stage
-        //     // app.renderer.render(app.stage);
-        // };
-
-
-        // // Start emitting
-        // emitter.emit = true;
-
-        // // Start the update
-        // update();
-
-
-        // -------------------- REF: https://github.com/pixijs/pixi-particles/issues/139 --------------------
+        //#region -------------------- PARTICLES: playOnceAndDestroy - REF: https://github.com/pixijs/pixi-particles/issues/139 --------------------
 
         emitter.playOnceAndDestroy(() => {
-            removeAllChildNodes(particleContainer_Ref.current);
+        // emitter.playOnce(() => {
+
+            // console.log('');
+            // console.log('-------------------- emitter.playOnceAndDestroy --------------------');
+            console.log('-------------------- SEE end of pixiWave for cleanup code --------------------');
+
+            // pixiWave();
+            // setTimeout(pixiWave, -2000);
+
+            // removeAllChildNodes(pixiContainer_Ref.current);
         })
 
-        //#endregion -------------------- PARTICLES: update - REF: https://github.com/pixijs/pixi-particles --------------------
+        //#endregion -------------------- PARTICLES: playOnceAndDestroy - REF: https://github.com/pixijs/pixi-particles/issues/139 --------------------
 
-    }, []);
+    // }, []);
+    }, [app.stage]);
+
+    //#endregion -------------------- FUNCTION: pixiPartcle = useCallback((thisContainer) --------------------
+
+
+    //#region -------------------- FUNCTION: pixiWave = useCallback((thisContainer) -  REF: https://codepen.io/shigimcp/pen/VwjoYVx --------------------
+
+    const pixiWave = useCallback((thisContainer) => {
+
+        // console.log('');
+        // console.log('------------------------- pixiWave(thisContainer) triggered! -------------------------');
+
+        var vw = 300;
+        var vh = 250;
+
+        const copy02Sprite = PIXI.Sprite.from(copy02);
+
+        copy02Sprite.scale.x = 1.5;
+        copy02Sprite.skew.x = -0.875;
+        copy02Sprite.anchor.set(-0.4375, -3.5);
+
+
+        const displacementSprite = new PIXI.Sprite.from(displMap);
+        let displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite);
+
+        app.stage.filterArea = new PIXI.Rectangle(0, 0, vw, vh);
+        app.stage.filters = [displacementFilter];
+        displacementSprite.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.REPEAT;
+
+
+        app.stage.addChild(copy02Sprite);
+
+        gsap.fromTo([copy02Sprite], { alpha: 0 }, { alpha: 0.5, ease: 'power3.out', duration: animDuration01_5, delay: 3 })
+        // gsap.to([copy02Sprite], { alpha: 0, ease: 'power3.out', duration: animDuration01_5, delay: 7 })
+        gsap.to([copy02Sprite], { alpha: 0, ease: 'power3.out', duration: animDuration01_5, delay: 7, onComplete: removeAllChildNodes, onCompleteParams: [thisContainer] })
+
+
+        app.stage.addChild(displacementSprite);
+
+        gsap.to([displacementSprite], { x: 512, y: 512, ease: 'none', repeat: -1, duration: 15 });
+
+    }, [app.stage]);
 
     //#endregion -------------------- FUNCTION: addPixi = useCallback(() --------------------
+
+
+
+    //#region -------------------- FUNCTION: handleClick() - GSAP timeline control --------------------
+
+    function handleClick() {
+    // const handleClick = useCallback(() => {
+
+        // console.log('');
+        // console.log('------------------------- handleClick() -------------------------');
+
+        removeAllChildNodes(pixiContainer_Ref.current);
+
+        tl.pause(0);
+        tl.restart();
+
+        gsap.globalTimeline.pause();
+        gsap.globalTimeline.resume();
+
+        addPixi(pixiContainer_Ref.current);
+        pixiParticle(pixiContainer_Ref.current);
+        pixiWave(pixiContainer_Ref.current);
+    }
+    // }, []);
+    // }, [tl, addPixi, pixiParticle, pixiWave]);
+
+    //#endregion -------------------- FUNCTION: handleClick() - GSAP timeline control --------------------
 
     //#endregion ==================== FUNCTIONS ====================
 
@@ -344,15 +352,15 @@ export default function JBJA_10263() {
 
     //#region ==================== TIMELINE tl: useEffect / useLayoutEffect ====================
 
-    const numParticle = 40;
-
     const tl = gsap.timeline({ delay: 0 });
 
 
     // useEffect(() => {
     useLayoutEffect(() => {
 
-        addPixi(particleContainer_Ref.current, numParticle);
+        addPixi(pixiContainer_Ref.current);
+        pixiParticle(pixiContainer_Ref.current);
+        pixiWave(pixiContainer_Ref.current);
 
         tl
 
@@ -362,7 +370,7 @@ export default function JBJA_10263() {
 
             // .set([copy01_Ref.current], { autoAlpha: 0 }, 'frame00')
             // .set([copy02_Ref.current], { autoAlpha: 0 }, 'frame00')
-            .set([copy02wave_Ref.current], { autoAlpha: 0 }, 'frame00')
+            // .set([copy02wave_Ref.current], { autoAlpha: 0 }, 'frame00')
 
             // .set([logo_Ref.current], { autoAlpha: 0 }, 'frame00')
             // .set([bottle_Ref.current], { autoAlpha: 0 }, 'frame00')
@@ -396,23 +404,24 @@ export default function JBJA_10263() {
 
             .to([copy01_Ref.current], { autoAlpha: 0, ease: 'power3.out', duration: animDuration01_5 }, 'frame02 +=1.5')
 
-            .fromTo([copy02_Ref.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.out', duration: animDuration01_5 }, 'frame02 +=2')
-            // .fromTo([copy02_Ref.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.out', duration: animDuration01_5, onComplete: removeAllChildNodes, onCompleteParams: [particleContainer_Ref.current] }, 'frame02 +=2')
+            .fromTo([copy02_Ref.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.out', duration: animDuration01_5 }, 'frame02 +=1.5')
 
             //#endregion ==================== FRAME 02 ====================
 
 
             //#region ==================== FRAME 03 ====================
 
-            .to([copy02_Ref.current], { autoAlpha: 0, ease: 'power3.out', duration: animDuration01_5 }, 'frame03 +=1.5')
+            .to([copy02_Ref.current], { autoAlpha: 0, ease: 'power3.out', duration: animDuration01_5 }, 'frame03 +=2.5')
 
-            .fromTo([bottle_Ref.current], { y: -100, scale: 3, autoAlpha: 0 }, { y: 0, scale: 1, autoAlpha: 1, ease: 'power3.out', duration: animDuration02 }, 'frame03 +=1.5')
-            .fromTo([logo_Ref.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.out', duration: animDuration01_5 }, 'frame03 +=2')
+            .fromTo([bottle_Ref.current], { y: -100, scale: 3, autoAlpha: 0 }, { y: 0, scale: 1, autoAlpha: 1, ease: 'power3.out', duration: animDuration02 }, 'frame03 +=2.5')
+            .fromTo([logo_Ref.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.out', duration: animDuration01_5 }, 'frame03 +=3')
 
             //#endregion ==================== FRAME 03 ====================
 
 
             //#region ==================== FRAME 04 ====================
+
+            .fromTo([clickTag_Ref.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.out', duration: animDuration00 }, 'frame04 +=0')
 
             .fromTo([modelMask_Ref.current], { y: -300 }, { y: 0, ease: 'power3.out', duration: animDuration01_5 }, 'frame04 +=1')
             .fromTo([bug_Ref.current], { y: 90 }, { y: 0, ease: 'power3.out', duration: animDuration00_75 }, 'frame04 +=1.25')
@@ -425,7 +434,7 @@ export default function JBJA_10263() {
         // console.log('tl timing = ' + tl.duration() + ' secs');
 
     // }, []);
-    }, [tl, addPixi]);
+    }, [tl, addPixi, pixiParticle, pixiWave]);
 
     //#endregion ==================== TIMELINE tl: useEffect / useLayoutEffect ====================
 
@@ -434,11 +443,12 @@ export default function JBJA_10263() {
 
         <div className='banner300x250 jbja_10263' id='jbja_10263ID'>
 
-            <div className='particleContainer' id='particleContainerID' ref={particleContainer_Ref}></div>
+            <div className='pixiContainer' id='pixiContainerID' ref={pixiContainer_Ref}></div>
+            {/* <div className='waveContainer' id='waveContainerID' ref={waveContainer_Ref}></div> */}
 
             <img className='copy' id='copy01ID' src={copy01} alt='copy01' ref={copy01_Ref} />
             <img className='copy' id='copy02ID' src={copy02} alt='copy02' ref={copy02_Ref} />
-            <img className='copy' id='copy02waveID' src={copy02} alt='copy02wave' ref={copy02wave_Ref} />
+            {/* <img className='copy' id='copy02waveID' src={copy02} alt='copy02wave' ref={copy02wave_Ref} /> */}
 
             <img className='logo' id='logoID' src={logo} alt='logo' ref={logo_Ref} />
 
@@ -489,6 +499,7 @@ export default function JBJA_10263() {
         {/* #endregion -------------------- BUG -------------------- */}
 
 
+            {/* <div className='clickTag' id='clickTagID' ref={clickTag_Ref}></div> */}
             <div className='clickTag' id='clickTagID' ref={clickTag_Ref} onClick={handleClick}></div>
 
         </div>
