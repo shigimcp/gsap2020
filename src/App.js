@@ -69,10 +69,16 @@ function App() {
 
     // const [bannerShow, setBannerShow] = useState();
 
-    // const [bannerShow, setBannerShow] = useState(<EAAR_18951 />);
+    const [bannerShow, setBannerShow] = useState(<EAAR_18951 />);
     // const [bannerShow, setBannerShow] = useState(<NMPF_04852 />);
     // const [bannerShow, setBannerShow] = useState(<NMMN_11155 />);
-    const [bannerShow, setBannerShow] = useState(<JBJA_10263 />);
+    // const [bannerShow, setBannerShow] = useState(<JCNR_07074 />);
+    // const [bannerShow, setBannerShow] = useState(<BSPS_26897 />);
+    // const [bannerShow, setBannerShow] = useState(<NMTG_26903 />);
+    // const [bannerShow, setBannerShow] = useState(<JCVR_26963 />);
+    // const [bannerShow, setBannerShow] = useState(<BCBG_02342 />);
+    // const [bannerShow, setBannerShow] = useState(<BCBG_05500 />);
+    // const [bannerShow, setBannerShow] = useState(<JBJA_10263 />);
 
     //#endregion ==================== useState ====================
 

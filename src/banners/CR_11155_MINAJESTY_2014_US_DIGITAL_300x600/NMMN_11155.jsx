@@ -133,7 +133,8 @@ const LogoNMMinajesty = React.forwardRef((props, LogoNMMinajestyRef) => {
 
     return (
 
-        <svg className='logo_NM_Minajesty' id='logo_NM_MinajestyID' width='250' height='75' version='1.1' baseProfile='full' space='preserve' overflow='visible' ref={LogoNMMinajestyRef}>
+        // <svg className='logo_NM_Minajesty' id='logo_NM_MinajestyID' width='250' height='75' version='1.1' baseProfile='full' space='preserve' overflow='visible' ref={LogoNMMinajestyRef}>
+        <svg className='logo_NM_Minajesty' id='logo_NM_MinajestyID' width='300' height='125' version='1.1' baseProfile='full' space='preserve' overflow='visible' ref={LogoNMMinajestyRef}>
 
             <defs>
 
@@ -161,7 +162,7 @@ const LogoNMMinajesty = React.forwardRef((props, LogoNMMinajestyRef) => {
                     </feComponentTransfer>
                 </filter> */}
 
-                <filter xmlns='http://www.w3.org/2000/svg' x='-100%' y='-100%' width='300%' height='300%' id='colorFilter'>
+                {/* <filter xmlns='http://www.w3.org/2000/svg' x='-100%' y='-100%' width='300%' height='300%' id='colorFilter'>
                     <feColorMatrix
                         in='SourceGraphic'
                         type='matrix'
@@ -169,20 +170,28 @@ const LogoNMMinajesty = React.forwardRef((props, LogoNMMinajestyRef) => {
                                 0 0.309803921568627 0 0 0
                                 0 0 0.309803921568627 0 0
                                 0 0 0 1 0' />
-                </filter>
+                </filter> */}
 
             </defs>
 
             <g className='logo_NM_Minajesty_ds' id='logo_NM_Minajesty_dsID' filter='url(#dsFilter1)'>
-                <image href={LOGO_NM_Minajesty_hed} width='250' height='75' />
+                {/* <image href={LOGO_NM_Minajesty_hed} width='250' height='75' />
                 <image href={LOGO_NM_Minajesty_nicki} width='250' height='75' />
-                <image href={LOGO_NM_Minajesty_minaj} width='250' height='75' />
+                <image href={LOGO_NM_Minajesty_minaj} width='250' height='75' /> */}
+
+                <image href={LOGO_NM_Minajesty_hed} x='26' y='37' width='250' height='75' />
+                <image href={LOGO_NM_Minajesty_nicki} x='26' y='37' width='250' height='75' />
+                <image href={LOGO_NM_Minajesty_minaj} x='26' y='37' width='250' height='75' />
             </g>
 
             <g className='logo_NM_Minajesty_base' id='logo_NM_Minajesty_baseID'>
-                <image href={LOGO_NM_Minajesty_hed} width='250' height='75' />
+                {/* <image href={LOGO_NM_Minajesty_hed} width='250' height='75' />
                 <image href={LOGO_NM_Minajesty_nicki} width='250' height='75' />
-                <image href={LOGO_NM_Minajesty_minaj} width='250' height='75' />
+                <image href={LOGO_NM_Minajesty_minaj} width='250' height='75' /> */}
+
+                <image href={LOGO_NM_Minajesty_hed} x='26' y='37' width='250' height='75' />
+                <image href={LOGO_NM_Minajesty_nicki} x='26' y='37' width='250' height='75' />
+                <image href={LOGO_NM_Minajesty_minaj} x='26' y='37' width='250' height='75' />
             </g>
 {/* 
             <g className='logo_NM_Minajesty_sultry' id='logo_NM_Minajesty_sultryID' filter='url(#dsFilter2)'>
@@ -978,7 +987,7 @@ export default function NMMN_11155() {
 
             // .set([LOGO_NM_MinajestyRef.current], { zIndex: 999 }, 'frame00')
             // .set([LogoNMMinajestyRef.current], { x: -125, y: 37 }, 'frame00')
-            .set([LogoNMMinajestyRef.current], { y: 37 }, 'frame00')
+            // .set([LogoNMMinajestyRef.current], { y: 37 }, 'frame00')
 
             // .set([document.getElementById('logo_NM_Minajesty_sultryID')], { y: 400 }, 'frame00')
             // .set([LOGO_NM_Minajesty_sultryRef.current], { x: -13, y: 403, scale: 1.3 }, 'frame00')
